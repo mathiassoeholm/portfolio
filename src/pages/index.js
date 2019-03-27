@@ -1,10 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import 'normalize.css';
+import "../stylesheets/main.scss"
+
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import "../stylesheets/main.scss"
 
 const IndexPage = () => (
   <Layout>
