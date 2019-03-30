@@ -1,6 +1,13 @@
 @charset "utf-8";
 
 @import
+  'effects/hacks',
+  'effects/options',
+  'effects/mixins',
+  'effects/wobble-top',
+  'effects/buzz-out';
+
+@import
   'common/size-helpers',
   'common/colors',
   'common/typography';

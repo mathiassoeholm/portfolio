@@ -57,7 +57,7 @@ class LoadingText extends Component<Props, State> {
 
   render() {
     return (
-      <span>
+      <span className={'pf-accent-text'}>
       {this.state.currentText}
       {this.state.isDone && this.props.children}
       </span>
