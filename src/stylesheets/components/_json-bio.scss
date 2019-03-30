@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+.pf-json-bio-container {
+  display: flex;
+  justify-content: center;
+  top: 20%;
+  position: relative;
+}
+
+.pf-json-bio {
+  margin: 0;
+  color: $faded-color;
+  font-family: 'Source Code Pro', monospace;
+  @include font-size-map($medium-font-size);
+}

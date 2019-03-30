@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import Line from "./line"
 import posed from "react-pose"
+import JsonBio from "./json-bio"
 
 const PosedDiv = posed.div({
   visible: {
@@ -18,8 +19,9 @@ const LandingPage: React.FC = () => {
 
   return (
     <PosedDiv className={'pf-landing-page'} pose={pose} >
-      <Line left={'10%'} height={'50%'} />
-      <Line left={'60%'} height={'20%'} />
+      <Line left={'2.5%'} height={'50%'} />
+      <Line left={'5%'} height={'40%'} />
+      <JsonBio />
     </PosedDiv>
   )
 }

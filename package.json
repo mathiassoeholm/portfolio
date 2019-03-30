@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
     "gatsby": "^2.2.13",
     "gatsby-image": "^2.0.34",
     "gatsby-plugin-manifest": "^2.0.24",
@@ -21,7 +22,8 @@
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-helmet": "^5.2.0",
-    "react-pose": "^4.0.8"
+    "react-pose": "^4.0.8",
+    "typeface-source-code-pro": "^0.0.71"
   },
   "devDependencies": {
     "@types/react": "^16.8.9",

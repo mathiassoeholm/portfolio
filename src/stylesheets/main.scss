@@ -1,7 +1,12 @@
-@import
-  'abstracts/variables';
+@charset "utf-8";
 
 @import
+  'common/size-helpers',
+  'common/colors',
+  'common/typography';
+
+@import
+  'components/json-bio',
   'components/section2',
   'components/line',
   'components/layout',

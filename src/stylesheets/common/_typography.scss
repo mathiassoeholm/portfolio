@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+$medium-font-size: (null: 19, $md: 17, $sm: 15, $xs: 13);
+
+.pf-accent-text {
+  color: $accent-color;
+}
+
+.pf-clear-text {
+  color: $clear-color;
+}
