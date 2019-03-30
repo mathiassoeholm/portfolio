@@ -1,1 +1,8 @@
-@import "components/all";
+@import
+  'abstracts/variables';
+
+@import
+  'components/section2',
+  'components/line',
+  'components/layout',
+  'components/landing-page';
