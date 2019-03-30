@@ -4,6 +4,7 @@ import posed from "react-pose"
 interface Props {
   left: string,
   height: string,
+  transform?: string | undefined
 }
 
 class Line extends Component<Props> {
@@ -35,7 +36,7 @@ class Line extends Component<Props> {
     return (
       <this.PosedLine
         className={'pf-line'}
-        style={{ left: this.props.left }}
+        style={{ left: this.props.left, transform: this.props.transform }}
       >
         <this.PosedLineHead className={'pf-line-head'}/>
       </this.PosedLine>

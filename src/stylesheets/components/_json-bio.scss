@@ -11,5 +11,9 @@
   margin: 0;
   color: $faded-color;
   font-family: 'Source Code Pro', monospace;
+
+  // This is to avoid resizing while running the loading text animation
+  min-width: em(370);
+
   @include font-size-map($medium-font-size);
 }
