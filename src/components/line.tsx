@@ -1,38 +1,22 @@
-import React, { Component, useEffect, useState } from "react"
+import React, { Component } from "react"
 import posed from "react-pose"
-import { CurrentPose } from "react-pose/lib/components/PoseElement/types"
 
 interface Props {
   left: string,
-  heightInRem: number,
+  height: string,
 }
 
-interface State {
-  pose: string,
-}
-
-class Line extends Component<Props, State> {
-  state: State = {
-    pose: 'hidden',
-  };
-
+class Line extends Component<Props> {
   PosedLine = posed.div({
-    hidden: { height: '0%' },
+    hidden: {
+      height: '0%'
+    },
     visible: {
-      height: `${this.props.heightInRem}%`,
-    },
-    short: {
-      height: `${this.props.heightInRem}%`,
+      height: this.props.height,
       transition: {
         duration: 2000,
       },
     },
-    long: {
-      height: `${this.props.heightInRem+1}%`,
-      transition: {
-        duration: 2000,
-      },
-    }
   });
 
   PosedLineHead = posed.div({
@@ -46,37 +30,12 @@ class Line extends Component<Props, State> {
     },
   });
 
-  constructor(props) {
-    super(props);
-
-    this.onPoseComplete = this.onPoseComplete.bind(this);
-  }
-
-  componentDidMount() {
-    this.setState({ pose: 'visible' });
-  }
-
-  onPoseComplete(currentPose: CurrentPose) {
-    switch (currentPose) {
-      case 'visible':
-        this.setState({ pose: 'long' })
-        break;
-      case 'short':
-        this.setState({ pose: 'long' })
-        break;
-      case 'long':
-        this.setState({ pose: 'short' })
-        break;
-    }
-  }
 
   render() {
     return (
       <this.PosedLine
         className={'pf-line'}
         style={{ left: this.props.left }}
-        pose={this.state.pose}
-        onPoseComplete={this.onPoseComplete}
       >
         <this.PosedLineHead className={'pf-line-head'}/>
       </this.PosedLine>
