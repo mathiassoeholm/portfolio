@@ -22,8 +22,7 @@
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-helmet": "^5.2.0",
-    "react-pose": "^4.0.8",
-    "typeface-source-code-pro": "^0.0.71"
+    "react-pose": "^4.0.8"
   },
   "devDependencies": {
     "@types/react": "^16.8.9",
