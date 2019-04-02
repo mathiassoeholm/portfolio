@@ -6,26 +6,29 @@ import SEO from "../components/seo"
 import { Helmet } from "react-helmet"
 
 const IndexPage = () => {
-  const canCheckFonts = document.fonts !== undefined;
-  const [didLoadFonts, setDidLoadFonts] = useState(false);
+  const canCheckFonts = document.fonts !== undefined
+  const [didLoadFonts, setDidLoadFonts] = useState(false)
 
   if (!didLoadFonts && canCheckFonts) {
-    document.fonts.ready.then( () => {
-      setDidLoadFonts(true);
-    });
+    document.fonts.ready.then(() => {
+      setDidLoadFonts(true)
+    })
 
-    return <div className={'pf-landing-page'} />;
+    return <div className={"pf-landing-page"} />
   } else {
     return (
       <div>
         <Helmet>
-          <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" />
+          <link
+            href="https://fonts.googleapis.com/css?family=Source+Code+Pro"
+            rel="stylesheet"
+          />
         </Helmet>
-        <SEO title={'Landing Page'} />
+        <SEO title={"Landing Page"} />
         <LandingPage />
         <Section2 />
       </div>
-    );
+    )
   }
 }
 

@@ -1,7 +1,14 @@
 .pf-icon-section {
   position: absolute;
-  background-color: #2098D1;
-  height: 40px;
   bottom: em(100);
   width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pf-icon-section-child {
+  width: em(20);
+  height: em(20);
+  color: $faded-color;
+  padding: em(7);
 }

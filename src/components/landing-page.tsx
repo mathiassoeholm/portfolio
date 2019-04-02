@@ -12,7 +12,7 @@ interface State {
 
 const PosedDiv = posed.div({
   visible: {
-    staggerChildren: 500,
+    staggerChildren: 250,
   }
 });
 
@@ -41,7 +41,10 @@ class LandingPage extends Component<{}, State> {
           <Line left={"5%"} height={"40%"}/>
           <Line left={"50%"} transform={"translate(-18em, 0)"} height={"50%"}/>
           <Line left={"50%"} transform={"translate(-15em, 0)"} height={"60%"}/>
-          <Line left={"50%"} transform={"translate(-13.2em, 0)"} height={"17%"}/>
+          <Line left={"50%"} transform={"translate(-13.4em, 0)"} height={"17%"}/>
+          <Line left={"100%"} transform={"translate(-18em, 0)"} height={"30%"}/>
+          <Line left={"100%"} transform={"translate(-15em, 0)"} height={"40%"}/>
+          <Line left={"100%"} transform={"translate(-13.4em, 0)"} height={"10%"}/>
         </Hidden>
         <Hidden mdUp>
           <Line left={"5%"} height={"10%"}/>
