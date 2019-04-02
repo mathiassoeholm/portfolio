@@ -2,10 +2,7 @@ import React from 'react';
 import LoadingText from "./loading-text"
 import posed from "react-pose"
 
-const PosedDiv = posed.div({
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
-});
+const PosedDiv = posed.div({});
 
 const JsonBio: React.FC = () => {
   const renderKeyValue = (key: string, value: string, index: number) => {
