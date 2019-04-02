@@ -15,5 +15,5 @@
   // This is to avoid resizing while running the loading text animation
   min-width: em(370);
 
-  @include font-size-map($medium-font-size);
+  @include font-size-map($large-font-size);
 }

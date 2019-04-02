@@ -5,8 +5,9 @@ import Button from "./button"
 const ResumeButton : React.FC = () => {
   return (
     <Button
-      onClick={() => {}}
+      onClick={() => {console.log('click')}}
       className={'pf-resume-button'}
+      text={'RESUMÉ'}
     />
   );
 };

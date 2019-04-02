@@ -3,13 +3,14 @@ import React from 'react';
 interface Props {
   onClick: () => void
   className: string
+  text: string
 }
 
 const Button : React.FC<Props> = (props: Props) => {
   return (
-    <div className={props.className}>
-
-    </div>
+    <button className={props.className} onClick={props.onClick}>
+        {props.text}
+    </button>
   );
 };
 

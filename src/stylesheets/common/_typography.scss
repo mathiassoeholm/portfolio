@@ -1,6 +1,7 @@
 @charset "utf-8";
 
-$medium-font-size: (null: 19, $md: 17, $sm: 15, $xs: 13);
+$large-font-size: (null: 19, $md: 17, $sm: 15, $xs: 13);
+$medium-font-size: (null: 17, $md: 15, $sm: 14, $xs: 12);
 
 .pf-accent-text {
   color: $accent-color;

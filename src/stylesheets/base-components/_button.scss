@@ -1,7 +1,18 @@
 @charset "utf-8";
 
 %pf-button {
+  @include font-size-map($medium-font-size);
   border: 1px solid $accent-color;
   box-sizing: border-box;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $accent-color;
+  font-family: 'Source Code Pro', monospace;
+  transition: 0.3s;
+  background-color: transparent;
+}
+
+%pf-button:hover {
+  background-color: shade($accent-color, 65%);
 }
