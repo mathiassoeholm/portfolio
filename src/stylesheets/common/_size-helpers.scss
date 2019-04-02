@@ -40,6 +40,32 @@
   }
 }
 
+// responsive width mixin
+@mixin responsive-width($size-map) {
+  @each $breakpoint, $font-size in $size-map {
+    @if $breakpoint == null {
+      width: em($font-size);
+    } @else {
+      @include breakpoint($breakpoint) {
+        width: em($font-size);
+      }
+    }
+  }
+}
+
+// responsive height mixin
+@mixin responsive-height($size-map) {
+  @each $breakpoint, $font-size in $size-map {
+    @if $breakpoint == null {
+      height: em($font-size);
+    } @else {
+      @include breakpoint($breakpoint) {
+        height: em($font-size);
+      }
+    }
+  }
+}
+
 // breakpoint variables
 $lg: 1919px;
 $md: 1279px;

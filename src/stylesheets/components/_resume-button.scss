@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+.pf-resume-button {
+  @extend %pf-button;
+  position: absolute;
+  right: em(25);
+  top: em(25);
+  height: em(51);
+
+  @include responsive-width((null: 148, $md: 148, $sm: 102, $xs: 102));
+  @include responsive-height((null: 51, $md: 51, $sm: 36, $xs: 36));
+}

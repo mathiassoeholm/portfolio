@@ -3,6 +3,7 @@ import Line from "./line"
 import posed from "react-pose"
 import JsonBio from "./json-bio"
 import { Hidden } from "@material-ui/core"
+import ResumeButton from "./resume-button"
 
 interface State {
   pose: string,
@@ -31,7 +32,8 @@ class LandingPage extends Component<{}, State> {
   render() {
     return (
       <PosedDiv className={"pf-landing-page"} pose={this.state.pose}>
-        <JsonBio/>
+        <ResumeButton />
+        <JsonBio />
         <Hidden smDown>
           <Line left={"2.5%"} height={"50%"}/>
           <Line left={"5%"} height={"40%"}/>
@@ -40,10 +42,9 @@ class LandingPage extends Component<{}, State> {
           <Line left={"50%"} transform={"translate(-13.2em, 0)"} height={"17%"}/>
         </Hidden>
         <Hidden mdUp>
-          <Line left={"50%"} transform={"translate(-13.2em, 0)"} height={"17%"}/>
-          <Line left={"50%"} transform={"translate(-10em, 0)"} height={"14%"}/>
-          <Line left={"70%"} height={"8%"}/>
-          <Line left={"80%"} height={"8%"}/>
+          <Line left={"5%"} height={"10%"}/>
+          <Line left={"100%"} transform={"translate(-12em, 0)"} height={"17%"}/>
+          <Line left={"100%"} transform={"translate(-14em, 0)"} height={"8%"}/>
         </Hidden>
       </PosedDiv>
     );
