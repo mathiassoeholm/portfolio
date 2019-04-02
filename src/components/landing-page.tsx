@@ -4,6 +4,7 @@ import posed from "react-pose"
 import JsonBio from "./json-bio"
 import { Hidden } from "@material-ui/core"
 import ResumeButton from "./resume-button"
+import IconSection from "./icon-section"
 
 interface State {
   pose: string,
@@ -34,6 +35,7 @@ class LandingPage extends Component<{}, State> {
       <PosedDiv className={"pf-landing-page"} pose={this.state.pose}>
         <ResumeButton />
         <JsonBio />
+        <IconSection/>
         <Hidden smDown>
           <Line left={"2.5%"} height={"50%"}/>
           <Line left={"5%"} height={"40%"}/>
