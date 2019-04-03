@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Mathias Soeholm | Fullstack Mobile Developer`,
+    title: `Hire Mathias`,
     description: `The online portfolio of a fullstack mobile developer, with an expertise in creating responsive and polished user layouts.`,
     author: `@gatsbyjs`,
   },
@@ -34,7 +34,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/fav-icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
