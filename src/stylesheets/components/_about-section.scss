@@ -2,5 +2,20 @@
 
 .pf-about-section {
   @extend %pf-base-section;
-  height: 30rem;
+  margin-bottom: em(40);
+}
+
+.pf-about-grid {
+  @include responsive-property(padding-left, (null: 100, $md: 50, $sm: 25, $xs: 0));
+  @include responsive-property(padding-right, (null: 100, $md: 50, $sm: 25, $xs: 0));
+}
+
+.pf-about-text {
+  color: $faded-color;
+  font-family: 'Source Code Pro', monospace;
+}
+
+.pf-about-image {
+  background-color: orange;
+  min-height: em(100);
 }

@@ -27,44 +27,23 @@
   }
 }
 
+@mixin responsive-property($property, $size-map) {
+  @each $breakpoint, $size in $size-map {
+    @if $breakpoint == null {
+      #{$property}: em($size);
+    } @else {
+      @include breakpoint($breakpoint) {
+        #{$property}: em($size);
+      }
+    }
+  }
+}
+
 // responsive font size mixin
 @mixin font-size-map($font-size-map) {
-  @each $breakpoint, $font-size in $font-size-map {
-    @if $breakpoint == null {
-      font-size: em($font-size);
-    } @else {
-      @include breakpoint($breakpoint) {
-        font-size: em($font-size);
-      }
-    }
-  }
+  @include responsive-property(font-size, $font-size-map);
 }
 
-// responsive width mixin
-@mixin responsive-width($size-map) {
-  @each $breakpoint, $font-size in $size-map {
-    @if $breakpoint == null {
-      width: em($font-size);
-    } @else {
-      @include breakpoint($breakpoint) {
-        width: em($font-size);
-      }
-    }
-  }
-}
-
-// responsive height mixin
-@mixin responsive-height($size-map) {
-  @each $breakpoint, $font-size in $size-map {
-    @if $breakpoint == null {
-      height: em($font-size);
-    } @else {
-      @include breakpoint($breakpoint) {
-        height: em($font-size);
-      }
-    }
-  }
-}
 
 // breakpoint variables
 $lg: 1919px;
