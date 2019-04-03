@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+.pf-grid-layout {
+  padding-left: 5%;
+  padding-right: 5%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.pf-grid-layout-container {
+  background-image: linear-gradient($landing-page-top-color, $landing-page-bottom-color);
+}

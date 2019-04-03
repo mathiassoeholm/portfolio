@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Hire Mathias`,
-    description: `The online portfolio of a fullstack mobile developer, with an expertise in creating responsive and polished user layouts.`,
+    description: `The online portfolio of a software engineer, with an expertise in creating responsive and polished user interfaces.`,
     author: `@gatsbyjs`,
   },
   plugins: [

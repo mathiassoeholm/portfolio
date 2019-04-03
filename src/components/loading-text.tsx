@@ -39,7 +39,7 @@ class LoadingText extends Component<Props, State> {
           this.setState({currentText: '.'.repeat(i)});
         }
 
-        await sleep(200);
+        await sleep(150);
       }
     }
 

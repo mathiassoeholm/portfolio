@@ -1,9 +1,11 @@
 .pf-icon-section {
   position: absolute;
   bottom: em(100);
-  width: 100%;
   display: flex;
+  flex: 1;
   justify-content: center;
+  left: 0;
+  right: 0;
 }
 
 .pf-icon-section-child {

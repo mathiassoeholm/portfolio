@@ -22,7 +22,7 @@ const JsonBio: React.FC = () => {
     return (
       <span key={index}>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <LoadingText finalText={`"${language}"`} loadIterations={5} dontShowDots={index !== 0} extraDelay={index*200}>
+        <LoadingText finalText={`"${language}"`} loadIterations={7} dontShowDots={index !== 0} extraDelay={index*200}>
           <span className={'pf-clear-text'}>
             ,
           </span>
@@ -38,7 +38,8 @@ const JsonBio: React.FC = () => {
         <span className={'pf-clear-text'}>{`{`}</span>
         <br />
         {renderKeyValue('name', 'Mathias Søholm', 0)}
-        {renderKeyValue('title', 'Mobile and Web-developer', 1)}
+        {renderKeyValue('title', 'Software Engineer', 1)}
+        {renderKeyValue('status', 'Available for hire', 2)}
         &nbsp;&nbsp;"languages"<span className={'pf-clear-text'}>: [</span>
         <br />
         {
