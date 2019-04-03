@@ -17,5 +17,8 @@
 
 .pf-about-image {
   background-color: orange;
-  min-height: em(100);
+  //min-height: em(100);
+  height: em(100);
+  width: em(60);
+  margin: auto;
 }

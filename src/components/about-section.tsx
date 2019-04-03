@@ -1,15 +1,31 @@
 import React from "react"
 import SectionHeader, { SectionHeaderType } from "./section-header"
 import { Grid } from "@material-ui/core"
-
+import Img from 'gatsby-image';
+import { useStaticQuery, graphql } from "gatsby"
 
 const AboutSection: React.FC = () => {
+
+  const data = useStaticQuery(
+    graphql`
+      query {
+        aboutImage: file(relativePath: { eq: "about-image.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    `
+  );
+
   return (
     <div className={'pf-about-section'}>
       <SectionHeader type={SectionHeaderType.About} />
       <Grid container className={'pf-about-grid'}>
-        <Grid item xs={12} sm={5} className={'pf-about-image'}>
-
+        <Grid item xs={12} sm={5}>
+          <Img fluid={data.aboutImage.childImageSharp.fluid} className={'pf-about-image'}/>
         </Grid>
         <Grid item xs={12} sm={7}>
           <div className={'pf-about-text'}>
