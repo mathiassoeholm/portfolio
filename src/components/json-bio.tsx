@@ -18,14 +18,18 @@ const JsonBio: React.FC = () => {
     );
   }
 
-  const renderLanguage = (language: string, index: number) => {
+  const renderLanguage = (language: string, index: number, array: string[]) => {
     return (
       <span key={index}>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <LoadingText finalText={`"${language}"`} loadIterations={7} dontShowDots={index !== 0} extraDelay={index*200}>
-          <span className={'pf-clear-text'}>
+          {
+            // Don't add a comma to the last value, otherwise the JSON isn't valid ;-)
+            index < array.length - 1 &&
+            <span className={'pf-clear-text'}>
             ,
-          </span>
+            </span>
+          }
         </LoadingText>
         <br />
       </span>

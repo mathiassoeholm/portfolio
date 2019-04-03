@@ -1,7 +1,6 @@
 @charset "utf-8";
 
 .pf-skills-section {
-  background-color: rebeccapurple;//$landing-page-bottom-color;
+  @extend %pf-base-section;
   height: 30rem;
-  @include font-size-map($medium-font-size);
 }

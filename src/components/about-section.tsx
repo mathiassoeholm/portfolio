@@ -1,10 +1,13 @@
-import React from 'react';
-import SectionHeader from "./section-header"
+import React from "react"
+import SectionHeader, { SectionHeaderType } from "./section-header"
 
-const AboutSection: React.FC = () => (
-  <div className={'pf-about-section'}>
-    <SectionHeader />
-  </div>
-);
+
+const AboutSection: React.FC = () => {
+  return (
+    <div className={'pf-about-section'}>
+      <SectionHeader type={SectionHeaderType.About} />
+    </div>
+  )
+};
 
 export default AboutSection;

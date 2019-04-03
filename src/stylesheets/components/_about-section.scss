@@ -1,8 +1,6 @@
 @charset "utf-8";
 
 .pf-about-section {
-  background-color: red;//$landing-page-bottom-color;
+  @extend %pf-base-section;
   height: 30rem;
-
-  @include font-size-map($medium-font-size);
 }

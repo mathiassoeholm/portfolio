@@ -1,9 +1,16 @@
 .pf-section-header {
   display: flex;
+  align-items: center;
 }
 
 .pf-section-header-line {
   height: 1px;
   background: $accent-color;
   flex: 1;
+}
+
+.pf-section-header-icon {
+  margin-left: em(7);
+  margin-right: em(7);
+  height: em(40);
 }
