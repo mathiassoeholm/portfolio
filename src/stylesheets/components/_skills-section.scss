@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+.pf-skills-section {
+  background-color: rebeccapurple;//$landing-page-bottom-color;
+  height: 30rem;
+  @include font-size-map($medium-font-size);
+  padding-left: em(100);
+  padding-right: em(100);
+}

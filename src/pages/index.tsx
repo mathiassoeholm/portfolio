@@ -1,9 +1,10 @@
 import React, { useState } from "react"
 
 import LandingPage from "../components/landing-page"
-import Section2 from "../components/section-2"
+import AboutSection from "../components/about-section"
 import SEO from "../components/seo"
 import { Helmet } from "react-helmet"
+import GridLayout from "../components/grid-layout"
 
 const IndexPage = () => {
   const canCheckFonts = typeof document !== "undefined" && document.fonts
@@ -25,8 +26,7 @@ const IndexPage = () => {
           />
         </Helmet>
         <SEO title={"Landing Page"} />
-        <LandingPage />
-        <Section2 />
+        <GridLayout />
       </div>
     )
   }
