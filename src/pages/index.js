@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import { Helmet } from "react-helmet"
 
 const IndexPage = () => {
-  const canCheckFonts = document.fonts !== undefined
+  const canCheckFonts = typeof document !== "undefined" && document.fonts
   const [didLoadFonts, setDidLoadFonts] = useState(false)
 
   if (!didLoadFonts && canCheckFonts) {
