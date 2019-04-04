@@ -2,6 +2,7 @@
 
 // Base style for about, skills and experience sections
 %pf-base-section {
+  @include font-size-map($medium-font-size);
   padding: em(10);
-  @include font-size-map($medium-font-size)
+  margin-bottom: em(40);
 }

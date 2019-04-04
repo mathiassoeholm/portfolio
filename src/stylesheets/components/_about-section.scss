@@ -2,23 +2,43 @@
 
 .pf-about-section {
   @extend %pf-base-section;
-  margin-bottom: em(40);
 }
 
 .pf-about-grid {
-  @include responsive-property(padding-left, (null: 100, $md: 50, $sm: 25, $xs: 0));
-  @include responsive-property(padding-right, (null: 100, $md: 50, $sm: 25, $xs: 0));
+  @include responsive-property-em(padding-left, (null: 150, $md: 110, $sm: 40, $xs: 0));
+  @include responsive-property-em(padding-right, (null: 150, $md: 110, $sm: 40, $xs: 0));
+  display: flex;
+  @include responsive-property(justify-content, (null: flex-start, $md: flex-start, $sm: flex-start, $xs: flex-center));
+  justify-content: center;
+  align-items: center;
 }
 
 .pf-about-text {
   color: $faded-color;
   font-family: 'Source Code Pro', monospace;
+  @include responsive-property-em(padding-top, (null: 0, $md: 0, $sm: 0, $xs: 30));
 }
 
 .pf-about-image {
-  background-color: orange;
-  //min-height: em(100);
-  height: em(100);
-  width: em(60);
-  margin: auto;
+  position: absolute;
+  left: em(10);
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.pf-about-image-background {
+  position: absolute;
+  background-color: $accent-color;
+  left: 0;
+  right: 0;
+  top: em(10);
+  bottom: em(-10);
+}
+
+.pf-about-image-container {
+  position: relative;
+  height: em(224*0.9);
+  width: em(177*0.9);
+  @include responsive-property(margin, (null: 0, $md: 0, $sm: 0, $xs: auto));
 }

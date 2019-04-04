@@ -27,7 +27,19 @@
   }
 }
 
-@mixin responsive-property($property, $size-map) {
+@mixin responsive-property($property, $value-map) {
+  @each $breakpoint, $value in $value-map {
+    @if $breakpoint == null {
+      #{$property}: $value;
+    } @else {
+      @include breakpoint($breakpoint) {
+        #{$property}: $value;
+      }
+    }
+  }
+}
+
+@mixin responsive-property-em($property, $size-map) {
   @each $breakpoint, $size in $size-map {
     @if $breakpoint == null {
       #{$property}: em($size);
@@ -41,7 +53,7 @@
 
 // responsive font size mixin
 @mixin font-size-map($font-size-map) {
-  @include responsive-property(font-size, $font-size-map);
+  @include responsive-property-em(font-size, $font-size-map);
 }
 
 

@@ -24,10 +24,13 @@ const AboutSection: React.FC = () => {
     <div className={'pf-about-section'}>
       <SectionHeader type={SectionHeaderType.About} />
       <Grid container className={'pf-about-grid'}>
-        <Grid item xs={12} sm={5}>
-          <Img fluid={data.aboutImage.childImageSharp.fluid} className={'pf-about-image'}/>
+        <Grid item xs={12} sm={4}>
+          <div className={'pf-about-image-container'}>
+            <div className={'pf-about-image-background'}/>
+            <Img fluid={data.aboutImage.childImageSharp.fluid} className={'pf-about-image'}/>
+          </div>
         </Grid>
-        <Grid item xs={12} sm={7}>
+        <Grid item xs={12} sm={8}>
           <div className={'pf-about-text'}>
           <p>
             Hey there, I’m Mathias! I like building digital things that animate,
