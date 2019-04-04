@@ -1,6 +1,7 @@
 .pf-experience-button {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: em(18);
   align-items: center;
   background-color: rgba(255, 255, 255, 0.1);
   height: em(61);
@@ -8,5 +9,4 @@
   color: $accent-color;
   font-family: 'Source Code Pro', monospace;
   border-radius: 0 6px 6px 0;
-  @include font-size-map($medium-font-size)
 }

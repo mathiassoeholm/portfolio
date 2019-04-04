@@ -9,11 +9,27 @@
 }
 
 .pf-experience-button-column {
+  @include font-size-map($medium-font-size);
+  border-left: 2px solid #454545;
   flex: 1;
-  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: em(400);
+  position: relative;
 }
 
 .pf-experience-text {
   flex: 2;
   background-color: blueviolet;
+}
+
+.pf-experience-marker {
+  position: absolute;
+  width: 4px;
+  height: em(61);
+  left: -3px;
+  top: 0;
+  background: $accent-color;
+  border-radius: 2px;
 }
