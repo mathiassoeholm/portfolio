@@ -1,12 +1,15 @@
 .pf-experience-button {
   display: flex;
   justify-content: flex-start;
-  padding-left: em(18);
+  padding-right: em(18);
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.1);
   height: $experience-button-height;
-  width: em(170);
   color: $accent-color;
   font-family: 'Source Code Pro', monospace;
   border-radius: 0 6px 6px 0;
+  margin-top: $experience-button-spacing*0.5;
+  margin-bottom: $experience-button-spacing*0.5;
+  margin-right: auto;
+  text-align: left;
+  white-space: nowrap;
 }

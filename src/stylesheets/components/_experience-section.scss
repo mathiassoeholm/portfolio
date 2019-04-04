@@ -10,11 +10,18 @@ $experience-button-spacing: em(5);
 
 .pf-experience-container {
   display: flex;
+  align-items: stretch;
+}
+
+.pf-experience-left-border-line {
+  width: 2px;
+  background: #454545;
+  margin-top: $experience-button-spacing*0.5;
+  margin-bottom: $experience-button-spacing*0.5;
 }
 
 .pf-experience-button-column {
   @include font-size-map($medium-font-size);
-  border-left: 2px solid #454545;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -33,7 +40,8 @@ $experience-button-spacing: em(5);
   width: 4px;
   height: $experience-button-height;
   left: -3px;
-  top: 0;
   background: $accent-color;
   border-radius: 2px;
+  margin-top: $experience-button-spacing*0.5;
+  margin-bottom: $experience-button-spacing*0.5;
 }
