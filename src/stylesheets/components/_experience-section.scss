@@ -2,5 +2,18 @@
 
 .pf-experience-section {
   @extend %pf-base-section;
-  height: 30rem;
+}
+
+.pf-experience-container {
+  display: flex;
+}
+
+.pf-experience-button-column {
+  flex: 1;
+  height: 40rem;
+}
+
+.pf-experience-text {
+  flex: 2;
+  background-color: blueviolet;
 }
