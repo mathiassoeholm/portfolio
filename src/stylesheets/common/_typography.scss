@@ -10,3 +10,8 @@ $medium-font-size: (null: 16, $md: 15, $sm: 13.5, $xs: 12);
 .pf-clear-text {
   color: $clear-color;
 }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

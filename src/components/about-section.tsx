@@ -36,12 +36,12 @@ const AboutSection: React.FC = () => {
             shipped several titles in small and large teams.
           </p>
           <p>
-            While completing my bachelors degree in Computer Sciene, I discovered
+            While completing my bachelors degree in Computer Science, I discovered
             that JavaScript was not all that bad and that building things in
             React is seriously awesome!
           </p>
           <p>
-            React, TypeScript, Redux and Webstorm is now my favorite cocktail.
+            React, TypeScript, Redux and WebStorm is now my favorite cocktail.
           </p>
           </div>
         </Grid>
