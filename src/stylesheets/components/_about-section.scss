@@ -15,7 +15,6 @@
 
 .pf-about-text {
   color: $faded-color;
-  font-family: 'Source Code Pro', monospace;
   @include responsive-property-em(padding-top, (null: 0, $md: 0, $sm: 0, $xs: 30));
 }
 

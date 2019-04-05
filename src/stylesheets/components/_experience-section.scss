@@ -32,7 +32,17 @@ $experience-button-spacing: em(5);
 
 .pf-experience-text {
   flex: 2;
-  background-color: blueviolet;
+  color: $clear-color;
+  p {
+    margin: 0;
+    color: $faded-color;
+  }
+  & .pf-period {
+    padding-bottom: em(29);
+  }
+  & .pf-title {
+    color: $clear-color;
+  }
 }
 
 .pf-experience-marker {
@@ -45,3 +55,4 @@ $experience-button-spacing: em(5);
   margin-top: $experience-button-spacing*0.5;
   margin-bottom: $experience-button-spacing*0.5;
 }
+
