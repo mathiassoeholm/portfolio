@@ -10,7 +10,7 @@ interface Props {
 const PosedButton = posed.button({
   selected: {
     backgroundColor: 'rgba(255, 255, 255, 0.1)',
-    paddingLeft: '1.3em',
+    paddingLeft: '1em',
   },
   unselected: {
     backgroundColor: 'rgba(255, 255, 255, 0)',

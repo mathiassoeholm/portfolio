@@ -15,14 +15,15 @@ $experience-button-column-height: $num-experience-buttons*$experience-button-hei
 }
 
 .pf-experience-left-border-line {
+  @include font-size-map($small-font-size);
   width: 2px;
-  height: $experience-button-column-height;
+  height: $experience-button-column-height - $experience-button-spacing*0.5;
   background: #454545;
   margin-top: $experience-button-spacing*0.5;
-  margin-bottom: $experience-button-spacing*0.5;
 }
 
 .pf-experience-button-column {
+  @include font-size-map($small-font-size);
   flex: 1;
   display: flex;
   flex-direction: column;
