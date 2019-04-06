@@ -2,5 +2,27 @@
 
 .pf-skills-section {
   @extend %pf-base-section;
-  height: 30rem;
+}
+
+.pf-skill-container-parent {
+  display: flex;
+  justify-content: center;
+}
+
+.pf-skill-container {
+  display: inline-flex;
+  align-items: flex-end;
+  flex-direction: column;
+
+  margin: auto;
+}
+
+.pf-skill-meter {
+  display: inline-block;
+  white-space: pre;
+  color: $accent-color;
+}
+
+.pf-skill-meter-prefix {
+  color: $clear-color;
 }
