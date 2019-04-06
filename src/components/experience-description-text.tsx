@@ -4,11 +4,32 @@ import { sleep } from "../utility/time-util";
 import posed from 'react-pose';
 
 const PosedUl = posed.ul({
+  visible: {
+    staggerChildren: 40,
+  },
+})
+
+const PosedLi = posed.li({
+  hidden: {
+    opacity: 0,
+    y: 50,
+    transition: {
+      duration: 50,
+    }
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 200,
+    }
+  },
 });
 
 interface State {
   currentValue: ExperienceDescription,
   nonce: number,
+  descriptionPose: string,
 }
 
 interface Props {
@@ -24,6 +45,7 @@ class ExperienceDescriptionText extends Component<Props, State> {
       description: [],
     },
     nonce: 0,
+    descriptionPose: 'hidden',
   }
 
   componentDidMount(): void {
@@ -53,6 +75,8 @@ class ExperienceDescriptionText extends Component<Props, State> {
       nonce,
       'period',
     );
+
+    this.hideAndShowDescription(experienceDescription.description, nonce);
 
     this.setState({
       nonce,
@@ -102,11 +126,36 @@ class ExperienceDescriptionText extends Component<Props, State> {
     }
   }
 
+  hideAndShowDescription = async (newDescription: string[], nonce: number) => {
+
+    if (this.state.descriptionPose == 'visible') {
+      this.setState({
+        descriptionPose: 'hidden',
+      })
+
+      await sleep(200);
+      if (nonce !== this.state.nonce) {
+        return;
+      }
+    }
+
+    this.setState({
+      currentValue: {
+        ...this.state.currentValue,
+        description: newDescription,
+      }
+    });
+
+    this.setState({
+      descriptionPose: 'visible',
+    })
+  }
+
   renderListItem = (item: string) => {
     return (
-      <li key={item}>
+      <PosedLi key={item}>
         {item}
-      </li>
+      </PosedLi>
     );
   }
 
@@ -118,9 +167,9 @@ class ExperienceDescriptionText extends Component<Props, State> {
         <p className={'pf-title'}>{title}</p>
         <p >@ {fullName}</p>
         <p className={'pf-period'}>{period}</p>
-        <ul className={'pf-description'}>
+        <PosedUl className={'pf-description'} pose={this.state.descriptionPose}>
           { description.map(this.renderListItem) }
-        </ul>
+        </PosedUl>
       </div>
     )
   }

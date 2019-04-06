@@ -5,8 +5,8 @@
 }
 
 .pf-about-grid {
-  @include responsive-property-em(padding-left, (null: 150, $md: 110, $sm: 40, $xs: 0));
-  @include responsive-property-em(padding-right, (null: 150, $md: 110, $sm: 40, $xs: 0));
+  @include responsive-property-em(padding-left, (null: 170, $md: 110, $sm: 40, $xs: 0));
+  @include responsive-property-em(padding-right, (null: 170, $md: 110, $sm: 40, $xs: 0));
   display: flex;
   @include responsive-property(justify-content, (null: flex-start, $md: flex-start, $sm: flex-start, $xs: flex-center));
   justify-content: center;
