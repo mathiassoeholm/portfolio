@@ -10,7 +10,7 @@ const JsonBio: React.FC = () => {
       <span>
         &nbsp;&nbsp;{`"${key}"`}
         <span className={'pf-clear-text'}>: </span>
-          <LoadingText finalText={`"${value}"`} loadIterations={(index + 1)*2} >
+          <LoadingText finalText={`"${value}"`} loadIterations={index + 1} >
             <span className={'pf-clear-text'}>,</span>
           </LoadingText>
         <br />
@@ -22,7 +22,7 @@ const JsonBio: React.FC = () => {
     return (
       <span key={index}>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <LoadingText finalText={`"${language}"`} loadIterations={7} dontShowDots={index !== 0} extraDelay={index*200}>
+        <LoadingText finalText={`"${language}"`} loadIterations={4} dontShowDots={index !== 0} extraDelay={index*200}>
           {
             // Don't add a comma to the last value, otherwise the JSON isn't valid ;-)
             index < array.length - 1 &&

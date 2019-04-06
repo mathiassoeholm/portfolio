@@ -3,6 +3,7 @@ import SectionHeader, { SectionHeaderType } from "./section-header"
 import { Grid } from "@material-ui/core"
 import Img from 'gatsby-image';
 import { useStaticQuery, graphql } from "gatsby"
+import FadeReveal from "./fade-reveal"
 
 const AboutSection: React.FC = () => {
 
@@ -25,13 +26,13 @@ const AboutSection: React.FC = () => {
       <SectionHeader type={SectionHeaderType.About} />
       <Grid container className={'pf-about-grid'}>
         <Grid item xs={12} sm={4}>
-          <div className={'pf-about-image-container'}>
+          <FadeReveal className={'pf-about-image-container'}>
             <div className={'pf-about-image-background'}/>
             <Img fluid={data.aboutImage.childImageSharp.fluid} className={'pf-about-image'}/>
-          </div>
+          </FadeReveal>
         </Grid>
         <Grid item xs={12} sm={8}>
-          <div className={'pf-about-text'}>
+          <FadeReveal className={'pf-about-text'} delay={200}>
           <p>
             Hey there, I’m Mathias! I like building digital things that animate,
             look good and challenge me as a programmer. I have about 8 years
@@ -46,7 +47,7 @@ const AboutSection: React.FC = () => {
           <p>
             React, TypeScript, Redux and WebStorm is now my favorite cocktail.
           </p>
-          </div>
+          </FadeReveal>
         </Grid>
       </Grid>
     </div>
