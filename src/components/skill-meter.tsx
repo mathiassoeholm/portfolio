@@ -2,6 +2,21 @@ import React, { Component } from "react"
 import { Hidden } from "@material-ui/core"
 import { sleep } from "../utility/time-util"
 import Easing from '../utility/easing';
+import posed from "react-pose"
+
+const PosedP = posed.p({
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 300,
+    },
+  }
+});
 
 interface Props {
   skill: string,
@@ -14,7 +29,7 @@ interface State {
 }
 
 const meterSize = 36;
-const maxAnimDuration = 1000; // ms
+const animDuration = 600; // ms
 const timeStep = 20; // ms
 
 class SkillMeter extends Component<Props> {
@@ -28,8 +43,10 @@ class SkillMeter extends Component<Props> {
   }
 
   startAnimation = async () => {
-    for (let t = 0; t < 1; t += timeStep / maxAnimDuration) {
-      const eased = Math.min(1, Easing.easeInQuad(t));
+    await sleep(200);
+
+    for (let t = 0; t < 1; t += timeStep / animDuration) {
+      const eased = Math.min(1, Easing.easeOutQuad(t));
       this.setState({
         currentValue: Math.min(eased*this.props.value),
       });
@@ -47,13 +64,13 @@ class SkillMeter extends Component<Props> {
     const meterString = '='.repeat(numSpaces)+ '>' + ` `.repeat(meterSize-(numSpaces+1));
 
     return (
-      <p className={"pf-skill-meter"}>
+      <PosedP className={"pf-skill-meter"}>
         <span className={'pf-skill-meter-prefix'}>{this.props.skill}:&nbsp;</span>
         <Hidden smUp>
           <br/>
         </Hidden>
         <span>[{meterString}]</span>
-      </p>
+      </PosedP>
     )
   }
 }
