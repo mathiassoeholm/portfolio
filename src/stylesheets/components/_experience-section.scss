@@ -47,11 +47,14 @@ $experience-button-column-height: $num-experience-buttons*$experience-button-hei
     margin-bottom: em(10);
   }
   & .pf-period {
-    @include font-size-map($small-font-size);
+    @include font-size-map($extra-small-font-size);
     padding-bottom: em(29);
   }
   & .pf-title {
     color: $clear-color;
+  }
+  & .pf-description {
+    @include font-size-map($small-font-size);
   }
 }
 

@@ -1,6 +1,10 @@
-import React, { Component } from "react"
-import { ExperienceDescription } from "./experience_descriptions"
-import { sleep } from "../utility/time-util"
+import React, { Component } from "react";
+import { ExperienceDescription } from "./experience_descriptions";
+import { sleep } from "../utility/time-util";
+import posed from 'react-pose';
+
+const PosedUl = posed.ul({
+});
 
 interface State {
   currentValue: ExperienceDescription,
@@ -41,6 +45,13 @@ class ExperienceDescriptionText extends Component<Props, State> {
       experienceDescription.fullName,
       nonce,
       'fullName',
+    );
+
+    this.mutateStateTextWithKey(
+      this.state.currentValue.period,
+      experienceDescription.period,
+      nonce,
+      'period',
     );
 
     this.setState({
@@ -107,8 +118,9 @@ class ExperienceDescriptionText extends Component<Props, State> {
         <p className={'pf-title'}>{title}</p>
         <p >@ {fullName}</p>
         <p className={'pf-period'}>{period}</p>
-
-        <ul>{ description.map(this.renderListItem) }</ul>
+        <ul className={'pf-description'}>
+          { description.map(this.renderListItem) }
+        </ul>
       </div>
     )
   }
