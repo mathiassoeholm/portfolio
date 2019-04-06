@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import VisibilitySensor from 'react-visibility-sensor';
 import SectionHeader, { SectionHeaderType } from "./section-header"
 import ExperienceButton from "./experience-button"
 import posed from "react-pose"
@@ -19,20 +20,27 @@ const PosedDiv = posed.div({
 let setText: (experienceDescription: ExperienceDescription) => void;
 
 const ExperienceSection: React.FC = () => {
-
   const [pose, setPose] = useState('_0');
+  const [didShowInitialText, setDidShowInitialText] = useState(false);
 
   const createExperienceButton = (text: string, index: number) => (
     <ExperienceButton
       key={index}
       text={text}
       onClick={() => {
-        setText(experienceDescriptions[text] || {});
+        setText(experienceDescriptions[text]);
         setPose(`_${index}`);
       }}
       selected={pose === `_${index}`}
     />
   );
+
+  const onTextChangeVisibility = (isVisible: boolean) => {
+    if (!didShowInitialText && isVisible) {
+      setText(experienceDescriptions['Mindfox']);
+      setDidShowInitialText(true);
+    }
+  }
 
   return (
     <div className={'pf-experience-section'}>
@@ -52,7 +60,9 @@ const ExperienceSection: React.FC = () => {
           }
           <PosedDiv className={'pf-experience-marker'} pose={pose}/>
         </div>
-        <ExperienceDescriptionText setSetText={childFunc => setText = childFunc} />
+        <VisibilitySensor onChange={onTextChangeVisibility} partialVisibility >
+          <ExperienceDescriptionText setSetText={childFunc => setText = childFunc} />
+        </VisibilitySensor>
       </div>
     </div>
   )

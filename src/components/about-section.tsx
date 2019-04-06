@@ -34,8 +34,8 @@ const AboutSection: React.FC = () => {
           <div className={'pf-about-text'}>
           <p>
             Hey there, I’m Mathias! I like building digital things that animate,
-            look good and challenge me as a programmer. I have almost 10 years
-            experience with developing highly polished mobile games and have
+            look good and challenge me as a programmer. I have about 8 years
+            experience developing highly polished mobile games and have
             shipped several titles in small and large teams.
           </p>
           <p>
