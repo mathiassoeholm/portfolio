@@ -39,9 +39,9 @@ class LandingPage extends Component<{}, State> {
         <Hidden smDown>
           <Line left={"2.5%"} height={"50%"}/>
           <Line left={"5%"} height={"40%"}/>
-          <Line left={"50%"} transform={"translate(-18em, 0)"} height={"50%"}/>
-          <Line left={"50%"} transform={"translate(-15em, 0)"} height={"60%"}/>
-          <Line left={"50%"} transform={"translate(-13.4em, 0)"} height={"17%"}/>
+          <Line left={"50%"} transform={"translate(-16em, 0)"} height={"50%"}/>
+          <Line left={"50%"} transform={"translate(-13em, 0)"} height={"60%"}/>
+          <Line left={"50%"} transform={"translate(-11.7em, 0)"} height={"17%"}/>
           <Line left={"100%"} transform={"translate(-18em, 0)"} height={"30%"}/>
           <Line left={"100%"} transform={"translate(-15em, 0)"} height={"40%"}/>
           <Line left={"100%"} transform={"translate(-13.4em, 0)"} height={"10%"}/>

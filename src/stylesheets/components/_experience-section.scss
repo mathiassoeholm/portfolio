@@ -3,6 +3,7 @@
 $num-experience-buttons: 6;
 $experience-button-height: em(61);
 $experience-button-spacing: em(5);
+$experience-button-column-height: $num-experience-buttons*$experience-button-height + $experience-button-spacing*($num-experience-buttons - 1);
 
 .pf-experience-section {
   @extend %pf-base-section;
@@ -15,18 +16,18 @@ $experience-button-spacing: em(5);
 
 .pf-experience-left-border-line {
   width: 2px;
+  height: $experience-button-column-height;
   background: #454545;
   margin-top: $experience-button-spacing*0.5;
   margin-bottom: $experience-button-spacing*0.5;
 }
 
 .pf-experience-button-column {
-  @include font-size-map($medium-font-size);
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: $num-experience-buttons*$experience-button-height + $experience-button-spacing*($num-experience-buttons - 1);
+  height: $experience-button-column-height;
   position: relative;
 }
 
@@ -42,9 +43,12 @@ $experience-button-spacing: em(5);
     padding-left: em(20);
     list-style-type: square;
   }
+  li {
+    margin-bottom: em(10);
+  }
   & .pf-period {
-    padding-bottom: em(29);
     @include font-size-map($small-font-size);
+    padding-bottom: em(29);
   }
   & .pf-title {
     color: $clear-color;

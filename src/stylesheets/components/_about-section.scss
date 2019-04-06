@@ -37,7 +37,7 @@
 
 .pf-about-image-container {
   position: relative;
-  height: em(224*0.9);
-  width: em(177*0.9);
   @include responsive-property(margin, (null: 0, $md: 0, $sm: 0, $xs: auto));
+  @include responsive-property-em(height, (null: 224*0.9, $md: 224*0.8, $sm: 224*0.7, $xs: 224*0.8));
+  @include responsive-property-em(width, (null: 177*0.9, $md: 177*0.8, $sm: 177*0.7, $xs: 177*0.8));
 }

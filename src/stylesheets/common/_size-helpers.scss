@@ -13,6 +13,17 @@
   @return $pixels / $context * 1em;
 }
 
+// unitless function to convert px to rem
+@function rem($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1rem;
+}
+
 // breakpoint mixin
 @mixin breakpoint($mq01: 0, $mq2: false, $maxmin: max-width) {
   @if $mq2 == false {
@@ -39,6 +50,18 @@
   }
 }
 
+@mixin responsive-property-rem($property, $size-map) {
+  @each $breakpoint, $size in $size-map {
+    @if $breakpoint == null {
+      #{$property}: rem($size);
+    } @else {
+      @include breakpoint($breakpoint) {
+        #{$property}: rem($size);
+      }
+    }
+  }
+}
+
 @mixin responsive-property-em($property, $size-map) {
   @each $breakpoint, $size in $size-map {
     @if $breakpoint == null {
@@ -53,7 +76,7 @@
 
 // responsive font size mixin
 @mixin font-size-map($font-size-map) {
-  @include responsive-property-em(font-size, $font-size-map);
+  @include responsive-property-rem(font-size, $font-size-map);
 }
 
 
