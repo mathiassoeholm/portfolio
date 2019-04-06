@@ -32,13 +32,19 @@ $experience-button-spacing: em(5);
 
 .pf-experience-text {
   flex: 2;
-  color: $clear-color;
+  color: $faded-color;
   p {
+    margin-top: 0;
+    margin-bottom: em(7);
+  }
+  ul {
     margin: 0;
-    color: $faded-color;
+    padding-left: em(20);
+    list-style-type: square;
   }
   & .pf-period {
     padding-bottom: em(29);
+    @include font-size-map($small-font-size);
   }
   & .pf-title {
     color: $clear-color;
