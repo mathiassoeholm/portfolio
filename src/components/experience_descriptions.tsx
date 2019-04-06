@@ -7,7 +7,7 @@ export interface ExperienceDescription {
 
 const experienceDescriptions:{ [index:string] : ExperienceDescription } = {
   'Mindfox': {
-    title: 'Co-founder & Software Engineer',
+    title: 'Co-Founder & Software Engineer',
     fullName: 'Mindfox Studios',
     period: 'Jun. 2018 - Present',
     description: [
