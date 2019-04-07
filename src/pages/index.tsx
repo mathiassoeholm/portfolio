@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import SEO from "../components/seo"
 import { Helmet } from "react-helmet"
 import GridLayout from "../components/grid-layout"
+import ProjectGreenSection from "../components/project-green/project-green-section"
 
 const IndexPage = () => {
   const canCheckFonts = typeof document !== "undefined" && document.fonts
@@ -22,9 +23,14 @@ const IndexPage = () => {
             href="https://fonts.googleapis.com/css?family=Source+Code+Pro"
             rel="stylesheet"
           />
+          <link
+            href="https://fonts.googleapis.com/css?family=Montserrat"
+            rel="stylesheet"
+          />
         </Helmet>
         <SEO title={"Hire Mathias"} />
         <GridLayout />
+        <ProjectGreenSection />
       </div>
     )
   }
