@@ -66,7 +66,7 @@ class SkillMeter extends Component<Props> {
     return (
       <PosedP className={"pf-skill-meter"}>
         <span className={'pf-skill-meter-prefix'}>{this.props.skill}:&nbsp;</span>
-        <Hidden smUp>
+        <Hidden only={['xl', 'lg', 'sm']}>
           <br/>
         </Hidden>
         <span>[{meterString}]</span>
