@@ -1,5 +1,5 @@
 import React, { Component, ReactNode } from "react"
-import { sleep } from "../utility/time-util"
+import { sleep } from "../../utility/time-util"
 
 interface Props {
   finalText: string,

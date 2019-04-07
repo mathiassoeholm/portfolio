@@ -1,8 +1,8 @@
 import React from 'react';
-import GithubIcon from '../assets/icons/github.svg'
-import LinkedInIcon from '../assets/icons/linkedin.svg'
-import EnvelopeIcon from '../assets/icons/envelope.svg'
-import FadeReveal from "./fade-reveal"
+import GithubIcon from '../../assets/icons/github.svg'
+import LinkedInIcon from '../../assets/icons/linkedin.svg'
+import EnvelopeIcon from '../../assets/icons/envelope.svg'
+import FadeReveal from "../fade-reveal"
 
 const IconSection : React.FC = () => {
   return (

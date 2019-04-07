@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ExperienceDescription } from "./experience_descriptions";
-import { sleep } from "../utility/time-util";
+import { sleep } from "../../utility/time-util";
 import posed from 'react-pose';
 
 const PosedUl = posed.ul({

@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Hidden } from "@material-ui/core"
-import { sleep } from "../utility/time-util"
-import Easing from '../utility/easing';
+import { sleep } from "../../utility/time-util"
+import Easing from '../../utility/easing';
 import posed from "react-pose"
 
 const PosedP = posed.p({

@@ -1,8 +1,8 @@
 import React, { useState } from "react"
-import SectionHeader, { SectionHeaderType } from "./section-header"
+import SectionHeader, { SectionHeaderType } from "../section-header"
 import SkillMeter from "./skill-meter"
-import { sleep } from "../utility/time-util"
-import FadeReveal from "./fade-reveal"
+import { sleep } from "../../utility/time-util"
+import FadeReveal from "../fade-reveal"
 
 interface SkillDescription {
   name: string,

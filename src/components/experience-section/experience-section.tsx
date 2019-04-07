@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import VisibilitySensor from 'react-visibility-sensor';
-import SectionHeader, { SectionHeaderType } from "./section-header"
+import SectionHeader, { SectionHeaderType } from "../section-header"
 import ExperienceButton from "./experience-button"
 import posed from "react-pose"
 import ExperienceDescriptionText from "./experience-description-text"

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Grid } from "@material-ui/core"
-import LandingPage from "./landing-page"
+import LandingPage from "./landing-page/landing-page"
 import AboutSection from "./about-section"
-import SkillsSection from "./skills-section"
-import ExperienceSection from "./experience-section"
+import SkillsSection from "./skill-section/skills-section"
+import ExperienceSection from "./experience-section/experience-section"
 
 const GridLayout: React.FC = () => {
   return (

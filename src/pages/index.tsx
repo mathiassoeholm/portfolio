@@ -1,7 +1,5 @@
 import React, { useState } from "react"
 
-import LandingPage from "../components/landing-page"
-import AboutSection from "../components/about-section"
 import SEO from "../components/seo"
 import { Helmet } from "react-helmet"
 import GridLayout from "../components/grid-layout"
@@ -25,7 +23,7 @@ const IndexPage = () => {
             rel="stylesheet"
           />
         </Helmet>
-        <SEO title={"Landing Page"} />
+        <SEO title={"Hire Mathias"} />
         <GridLayout />
       </div>
     )

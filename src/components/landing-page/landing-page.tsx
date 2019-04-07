@@ -3,7 +3,7 @@ import Line from "./line"
 import posed from "react-pose"
 import JsonBio from "./json-bio"
 import { Hidden } from "@material-ui/core"
-import ResumeButton from "./resume-button"
+import ResumeButton from "../resume-button"
 import IconSection from "./icon-section"
 
 interface State {
