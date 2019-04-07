@@ -1,13 +1,14 @@
-$overlap-top: em(100);
+$project-green-overlap-top: em(100);
+$project-green-background: #1FB74A;
 
 .pf-project-green-background {
-  background: #1FB74A;
+  background: $project-green-background;
   width: 100%;
-  -webkit-clip-path: polygon(0 0, 100% $overlap-top, 100% 100%, 0 100%);
-  clip-path: polygon(0 0, 100% $overlap-top, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% $project-green-overlap-top, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% $project-green-overlap-top, 100% 100%, 0 100%);
   position: relative;
-  top: -$overlap-top;
-  padding-top: $overlap-top;
+  top: -$project-green-overlap-top;
+  padding-top: $project-green-overlap-top;
 }
 
 .pf-project-green-content {
@@ -41,12 +42,14 @@ $overlap-top: em(100);
 .pf-project-green-logo-container {
   width: em(300);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
 }
 
 .pf-project-green-logo {
+  padding-bottom: em(50);
 }
 
 .pf-project-green-text {
