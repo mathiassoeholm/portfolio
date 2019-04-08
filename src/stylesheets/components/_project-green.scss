@@ -33,10 +33,17 @@ $project-green-background: #1FB74A;
   padding-right: em(60);
 }
 
-.pf-project-green-images-row {
+.pf-project-green-image-row {
   display: flex;
-  background: burlywood;
-  height: em(200);
+  justify-content: center;
+}
+
+.pf-project-green-image {
+  height: 100%;
+  width: em(262);
+  margin: em(14);
+  border-radius: em(28);
+  box-shadow: 0 em(4) em(20) rgba(0, 0, 0, 0.25);
 }
 
 .pf-project-green-logo-container {
