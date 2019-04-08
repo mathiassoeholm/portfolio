@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from "../button"
 
-
 const ResumeButton : React.FC = () => {
   return (
     <Button

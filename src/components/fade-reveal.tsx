@@ -9,6 +9,8 @@ interface Props {
   className?: string | undefined,
   duration?: number | undefined,
   delay?: number | undefined,
+  yOffset: number | undefined,
+  xOffset: number | undefined,
 }
 
 interface State {
@@ -17,6 +19,11 @@ interface State {
 }
 
 class FadeReveal extends Component<Props, State> {
+
+  public static defaultProps = {
+    yOffset: 80,
+    xOffset: undefined,
+  };
 
   state: State = {
     pose: 'hidden',
@@ -39,12 +46,14 @@ class FadeReveal extends Component<Props, State> {
   PosedDiv = posed.div({
     hidden: {
       opacity: 0,
-      y: 80,
+      y: this.props.yOffset,
+      x: this.props.xOffset,
     },
     visible: {
       opacity: 1,
       staggerChildren: this.props.staggerChildren,
-      y: 0,
+      y: this.props.yOffset && 0,
+      x: this.props.xOffset && 0,
       transition: {
         duration: this.props.duration || 500,
         delay: this.props.delay,
@@ -56,7 +65,7 @@ class FadeReveal extends Component<Props, State> {
   render() {
     return (
       <VisibilitySensor onChange={this.onChangeVisibility} partialVisibility minTopValue={50}>
-        <this.PosedDiv pose={this.state.pose} className={this.props.className}>
+        <this.PosedDiv pose={this.state.pose} className={`${this.props.className} pf-fade-reveal`}>
           {this.props.children}
         </this.PosedDiv>
       </VisibilitySensor>

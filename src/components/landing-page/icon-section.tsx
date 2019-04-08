@@ -8,17 +8,17 @@ const IconSection : React.FC = () => {
   return (
     <div className={'pf-icon-section'}>
       <FadeReveal delay={4100}>
-        <a href={'https://www.linkedin.com/in/mathias-soeholm-1887a438/'}>
+        <a href={'https://www.linkedin.com/in/mathias-soeholm-1887a438/'} target="_blank">
           <LinkedInIcon className={'pf-icon-section-child'}/>
         </a>
       </FadeReveal>
       <FadeReveal delay={4200}>
-        <a href={'https://github.com/mathiassoeholm'}>
+        <a href={'https://github.com/mathiassoeholm'} target="_blank">
           <GithubIcon className={'pf-icon-section-child'}/>
         </a>
       </FadeReveal>
       <FadeReveal delay={4300}>
-        <a href={'mailto:mathiassoeholm@gmail.com'}>
+        <a href={'mailto:mathiassoeholm@gmail.com'} target="_blank">
           <EnvelopeIcon className={'pf-icon-section-child'}/>
         </a>
       </FadeReveal>
