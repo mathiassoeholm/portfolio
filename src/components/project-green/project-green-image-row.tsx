@@ -30,7 +30,7 @@ const ProjectGreenImageRow: React.FC = () => {
   );
 
   return (
-    <div className={'pf-project-green-image-row '}>
+    <div className={'pf-project-green-image-row'}>
       <Img sizes={data.image01.childImageSharp.sizes} className={'pf-project-green-image'} />
       <Img sizes={data.image02.childImageSharp.sizes} className={'pf-project-green-image'} />
       <Img sizes={data.image03.childImageSharp.sizes} className={'pf-project-green-image'} />

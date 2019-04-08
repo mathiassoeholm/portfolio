@@ -18,9 +18,7 @@ const ProjectGreenSection: React.FC = () => {
             <ProjectGreenDescription />
           </Hidden>
         </div>
-        <Hidden smDown>
-          <ProjectGreenImageRow/>
-        </Hidden>
+        <ProjectGreenImageRow />
         <Hidden mdUp>
           <ProjectGreenDescription />
         </Hidden>
