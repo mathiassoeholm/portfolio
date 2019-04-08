@@ -1,12 +1,19 @@
 $project-green-overlap-top: em(100);
 $project-green-background: #1FB74A;
 
+.pf-project-green-parent {
+  // Only purpose here is to allow the background to
+  // use absolute position. Otherwise the top offset
+  // leaves empty space in the bottom.
+  position: relative;
+}
+
 .pf-project-green-background {
   background: $project-green-background;
   width: 100%;
   -webkit-clip-path: polygon(0 0, 100% $project-green-overlap-top, 100% 100%, 0 100%);
   clip-path: polygon(0 0, 100% $project-green-overlap-top, 100% 100%, 0 100%);
-  position: relative;
+  position: absolute;
   top: -$project-green-overlap-top;
   padding-top: $project-green-overlap-top;
 }
