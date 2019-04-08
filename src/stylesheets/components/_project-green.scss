@@ -46,9 +46,7 @@ $project-green-background: #1FB74A;
 
 .pf-project-green-image-row {
   display: flex;
-  overflow: scroll;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: auto;
   flex-wrap: nowrap;
 }
 
@@ -59,6 +57,8 @@ $project-green-background: #1FB74A;
   box-shadow: 0 em(4) em(20) rgba(0, 0, 0, 0.25);
   flex: 0 0 auto;
   margin: em(15);
+  overflow: visible;
+  z-index: 1;
 }
 
 .pf-project-green-logo-container {

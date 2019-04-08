@@ -1,4 +1,5 @@
 import React from 'react';
+import ProjectLogos from "../project-logos"
 
 const ProjectGreenDescription: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ const ProjectGreenDescription: React.FC = () => {
         I designed the UI in Figma, then built the app with Flutter and uses the Dart version of Redux to keep a clean and testable architecture.
         During development I used Fastlane to deploy on AppCenter after every push.
       </p>
+      <ProjectLogos logos={['flutter', 'fastlane', 'figma']}/>
     </div>
   );
 }

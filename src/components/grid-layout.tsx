@@ -4,7 +4,6 @@ import LandingPage from "./landing-page/landing-page"
 import AboutSection from "./about-section"
 import SkillsSection from "./skill-section/skills-section"
 import ExperienceSection from "./experience-section/experience-section"
-import ProjectGreenSection from "./project-green/project-green-section"
 
 const GridLayout: React.FC = () => {
   return (

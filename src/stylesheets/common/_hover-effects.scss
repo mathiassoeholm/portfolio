@@ -1,0 +1,7 @@
+.image-hover-effect {
+  transition: 200ms;
+}
+
+.image-hover-effect:hover {
+  transform: translateY(em(-20));
+}
