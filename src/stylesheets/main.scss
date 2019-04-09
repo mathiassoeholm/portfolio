@@ -14,7 +14,7 @@
   'common/global',
   'common/size-helpers',
   'common/colors',
-  'common/clip-path-mixin',
+  'common/background-clip',
   'common/hover-effects',
   'common/typography';
 
@@ -23,6 +23,8 @@
   'base-components/button';
 
 @import
+  'components/clipped-section-part',
+  'components/ether-wallet',
   'components/project-logos',
   'components/fade-reveal',
   'components/github-button',

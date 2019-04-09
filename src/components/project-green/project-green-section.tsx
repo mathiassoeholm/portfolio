@@ -4,10 +4,12 @@ import ProjectGreenDescription from "./project-green-description"
 import { Hidden } from "@material-ui/core"
 import GithubButton from "../github-button"
 import ProjectGreenImageRow from "./project-green-image-row"
+import ClippedSectionPart from "../clipped-section-part"
 
 const ProjectGreenSection: React.FC = () => {
   return (
-    <div className={'pf-project-green-parent'}>
+    <div>
+      <ClippedSectionPart topRight={6}/>
       <div className={'pf-project-green-background'}>
         <div className={'pf-project-green-content'}>
           <div className={'pf-project-green-top-row '}>

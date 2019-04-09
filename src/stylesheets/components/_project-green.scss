@@ -2,19 +2,10 @@ $project-green-overlap-top-xl: em(100);
 $project-green-overlap-top-sm: em(40);
 $project-green-background: #1FB74A;
 
-.pf-project-green-parent {
-  // Only purpose here is to allow the background to
-  // use absolute position. Otherwise the top offset
-  // leaves empty space in the bottom.
-  position: relative;
-}
-
-
-
-.pf-project-green-background {
-  background: $project-green-background;
-  width: 100%;
+.pf-project-green-top {
   position: absolute;
+
+  background: $project-green-background;
   @include clip-path(
       polygon(0 0, 100% $project-green-overlap-top-xl, 100% 100%, 0 100%),
       polygon(0 0, 100% $project-green-overlap-top-sm, 100% 100%, 0 100%)
@@ -25,12 +16,20 @@ $project-green-background: #1FB74A;
     $sm: -$project-green-overlap-top-sm,
     $xs: -$project-green-overlap-top-sm
   ));
-  @include responsive-property(padding-top, (
+
+  @include responsive-property(height, (
     null: $project-green-overlap-top-xl,
     $md: $project-green-overlap-top-xl,
     $sm: $project-green-overlap-top-sm,
     $xs: $project-green-overlap-top-sm
   ));
+  left: 0;
+  right: 0;
+}
+
+.pf-project-green-background {
+  background: $project-green-background;
+  width: 100%;
 }
 
 .pf-project-green-content {

@@ -1,0 +1,24 @@
+$ether-wallet-overlap-top-xl: em(100);
+$ether-wallet--overlap-top-sm: em(40);
+
+.ether-wallet-background {
+  background: #3B5998;
+  width: 100%;
+  position: absolute;
+  @include clip-path(
+      polygon(0 0, 100% $ether-wallet-overlap-top-xl, 100% 100%, 0 100%),
+      polygon(0 0, 100% $ether-wallet--overlap-top-sm, 100% 100%, 0 100%)
+  );
+  @include responsive-property(top, (
+    null: -$ether-wallet-overlap-top-xl,
+    $md: -$ether-wallet-overlap-top-xl,
+    $sm: -$ether-wallet--overlap-top-sm,
+    $xs: -$ether-wallet--overlap-top-sm
+  ));
+  @include responsive-property(padding-top, (
+    null: $ether-wallet-overlap-top-xl,
+    $md: $ether-wallet-overlap-top-xl,
+    $sm: $ether-wallet--overlap-top-sm,
+    $xs: $ether-wallet--overlap-top-sm
+  ));
+}

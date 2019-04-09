@@ -4,6 +4,7 @@ import SEO from "../components/seo"
 import { Helmet } from "react-helmet"
 import GridLayout from "../components/grid-layout"
 import ProjectGreenSection from "../components/project-green/project-green-section"
+import EtherWalletSection from "../components/ether-wallet/ether-wallet-section"
 
 const IndexPage = () => {
   const canCheckFonts = typeof document !== "undefined" && document.fonts
@@ -31,6 +32,7 @@ const IndexPage = () => {
         <SEO title={"Hire Mathias"} />
         <GridLayout />
         <ProjectGreenSection />
+        <EtherWalletSection />
       </div>
     )
   }

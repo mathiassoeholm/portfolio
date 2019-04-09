@@ -1,7 +1,7 @@
 .pf-project-logos-container {
   display: flex;
   width: 100%;
-  @include responsive-property(justify-content, (null: start, $md: start, $sm: center, $xs: center));
+  @include responsive-property(justify-content, (null: flex-start, $md: flex-start, $sm: center, $xs: center));
 }
 
 .pf-project-logo {
