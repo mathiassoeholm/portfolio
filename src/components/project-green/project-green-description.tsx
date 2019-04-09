@@ -11,8 +11,10 @@ const ProjectGreenDescription: React.FC = () => {
       </p>
       <h1>Technology</h1>
       <p>
-        I designed the UI in Figma, then built the app with Flutter and uses the Dart version of Redux to keep a clean and testable architecture.
-        During development I used Fastlane to deploy on AppCenter after every push.
+        I designed the UI in <a href={'https://www.figma.com'} target={'_blank'}>Figma</a>,
+        then built the app with <a href={'https://flutter.dev'} target={'_blank'}>Flutter</a> and
+        used the Dart version of <a href={'https://redux.js.org'} target={'_blank'}>Redux</a> to keep a clean and testable architecture.
+        During development I used <a href={'https://fastlane.tools'} target={'_blank'}>Fastlane</a> to deploy on AppCenter after every push.
       </p>
       <ProjectLogos logos={['flutter', 'fastlane', 'figma']}/>
     </div>
