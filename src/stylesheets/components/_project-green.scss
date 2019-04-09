@@ -1,35 +1,16 @@
-$project-green-overlap-top-xl: em(100);
-$project-green-overlap-top-sm: em(40);
 $project-green-background: #1FB74A;
 
-.pf-project-green-top {
-  position: absolute;
-
+.pf-project-green-clip-part {
   background: $project-green-background;
-  @include clip-path(
-      polygon(0 0, 100% $project-green-overlap-top-xl, 100% 100%, 0 100%),
-      polygon(0 0, 100% $project-green-overlap-top-sm, 100% 100%, 0 100%)
-  );
-  @include responsive-property(top, (
-    null: -$project-green-overlap-top-xl,
-    $md: -$project-green-overlap-top-xl,
-    $sm: -$project-green-overlap-top-sm,
-    $xs: -$project-green-overlap-top-sm
-  ));
-
-  @include responsive-property(height, (
-    null: $project-green-overlap-top-xl,
-    $md: $project-green-overlap-top-xl,
-    $sm: $project-green-overlap-top-sm,
-    $xs: $project-green-overlap-top-sm
-  ));
-  left: 0;
-  right: 0;
 }
 
 .pf-project-green-background {
   background: $project-green-background;
   width: 100%;
+
+  // Fix seam between clipped-section and this
+  position: relative;
+  top: -1px;
 }
 
 .pf-project-green-content {

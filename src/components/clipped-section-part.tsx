@@ -1,10 +1,12 @@
 import React from 'react';
+import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
 
 interface Props {
   topLeft?: number
   topRight?: number
   bottomRight?: number
   bottomLeft?: number
+  className?: string
 }
 
 const ClippedSectionPart: React.FC<Props> = ({
@@ -12,13 +14,24 @@ const ClippedSectionPart: React.FC<Props> = ({
   topRight = 0,
   bottomRight = 0,
   bottomLeft = 0,
+  className,
 }: Props) => {
+
+  const sm = '600px';
+  const matches = useMediaQuery(`(max-width:${sm})`);
+  if (matches) {
+    topLeft *= 0.4;
+    topRight *= 0.4;
+    bottomRight *= 0.4;
+    bottomLeft *= 0.4;
+  }
+
   const height = Math.max(
     topLeft,
     topRight,
     bottomRight,
     bottomLeft,
-  );
+  ) +(1/16); // Compensate for 1-pixel offset
 
   const clipPolygon = `
     polygon(
@@ -32,18 +45,16 @@ const ClippedSectionPart: React.FC<Props> = ({
   const style = {
     WebkitClipPath: clipPolygon,
     clipPath: clipPolygon,
-    height: `${height}em`,
     left: 0,
     right: 0,
     top: (topLeft || topRight) && `${-height}em`,
     bottom: (bottomLeft || bottomRight) && `${-height}em`,
-    background: 'red',
     position: 'absolute',
   }
 
   return (
-    <div className={'clipped-section-part-container'}>
-      <div style={style}/>
+    <div className={'clipped-section-part-container'} >
+      <div style={style} className={className}/>
     </div>
   );
 }

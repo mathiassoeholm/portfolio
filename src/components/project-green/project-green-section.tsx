@@ -9,7 +9,7 @@ import ClippedSectionPart from "../clipped-section-part"
 const ProjectGreenSection: React.FC = () => {
   return (
     <div>
-      <ClippedSectionPart topRight={6}/>
+      <ClippedSectionPart topRight={6} className={'pf-project-green-clip-part'}/>
       <div className={'pf-project-green-background'}>
         <div className={'pf-project-green-content'}>
           <div className={'pf-project-green-top-row '}>
