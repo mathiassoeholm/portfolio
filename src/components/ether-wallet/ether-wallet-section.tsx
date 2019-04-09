@@ -1,12 +1,12 @@
 import React from 'react';
+import ClippedSectionPart from "../clipped-section-part"
 
 const EtherWalletSection: React.FC = () => {
-  return <div style={{height: '300px'}}>asdfsdsdf</div>;
-
   return (
-    <div className={'pf-parent-of-clipped-bg'}>
+    <div>
+      <ClippedSectionPart topLeft={8} className={'pf-ether-wallet-clip-part'}/>
       <div className={'pf-ether-wallet-background'}>
-        <div style={{height: '300px'}}>asdfsdsdf</div>
+        <div style={{height: '300px'}}></div>
       </div>
     </div>
   );

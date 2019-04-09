@@ -17,8 +17,8 @@ const ClippedSectionPart: React.FC<Props> = ({
   className,
 }: Props) => {
 
-  const sm = '600px';
-  const matches = useMediaQuery(`(max-width:${sm})`);
+  const md = '960px';
+  const matches = useMediaQuery(`(max-width:${md})`);
   if (matches) {
     topLeft *= 0.4;
     topRight *= 0.4;

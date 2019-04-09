@@ -1,6 +1,15 @@
-$ether-wallet-overlap-top-xl: em(100);
-$ether-wallet--overlap-top-sm: em(40);
+$ether-wallet-backrgound: #3B5998;
 
-.ether-wallet-background {
-
+.pf-ether-wallet-clip-part {
+  background: $ether-wallet-backrgound;
+  z-index: 1;
 }
+
+.pf-ether-wallet-background {
+  background: $ether-wallet-backrgound;
+
+  // Fix seam between clipped-section and this
+  position: relative;
+  top: -1px;
+}
+
