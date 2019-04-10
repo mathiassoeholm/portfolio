@@ -19,12 +19,18 @@ class IndexPage extends Component<{}, State> {
   componentDidMount(): void {
     const loader = document.querySelector('.pf-page-loader-container');
     setTimeout(() => {
-      if (loader) {
-        loader.classList.add('pf-page-loader-container--hide');
+      if (!loader) {
+        return;
       }
 
-      this.setState({ didLoad: true })
-    }, 1500);
+      loader.classList.add('pf-page-loader-container--hide');
+
+      this.setState({ didLoad: true });
+
+      setTimeout(() => {
+        loader.parentNode.removeChild(loader);
+      }, 300)
+    }, 1000);
   }
 
   render() {
