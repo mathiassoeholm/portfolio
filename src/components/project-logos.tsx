@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React from 'react';
 import Img from 'gatsby-image';
+import FadeReveal from "./fade-reveal"
 
 interface Props {
   logos: string[],
@@ -44,13 +45,14 @@ const ProjectLogos: React.FC<Props> = (props: Props) => {
 
   return (
     <div className={'pf-project-logos-container'}>
-      {props.logos.map(logo =>
-        <Img
-          key={logo}
-          fluid={data[logo].childImageSharp.fluid}
-          className={'pf-project-logo'}
-          imgStyle={{ objectFit: 'contain' }}
-        />
+      {props.logos.map((logo, index) =>
+        <FadeReveal key={logo} delay={index*150}>
+          <Img
+            fluid={data[logo].childImageSharp.fluid}
+            className={'pf-project-logo'}
+            imgStyle={{ objectFit: 'contain' }}
+          />
+        </FadeReveal>
       )}
     </div>
   );

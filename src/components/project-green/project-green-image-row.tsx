@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from "gatsby"
 import Img from 'gatsby-image';
+import FadeReveal from "../fade-reveal"
 
 const ProjectGreenImageRow: React.FC = () => {
   const data = useStaticQuery(
@@ -31,10 +32,18 @@ const ProjectGreenImageRow: React.FC = () => {
 
   return (
     <div className={'pf-project-green-image-row'}>
-      <Img sizes={data.image01.childImageSharp.sizes} className={'pf-project-green-image'} />
-      <Img sizes={data.image02.childImageSharp.sizes} className={'pf-project-green-image'} />
-      <Img sizes={data.image03.childImageSharp.sizes} className={'pf-project-green-image'} />
-      <Img sizes={data.image04.childImageSharp.sizes} className={'pf-project-green-image'} />
+      {
+        [
+          data.image01.childImageSharp.sizes,
+          data.image02.childImageSharp.sizes,
+          data.image03.childImageSharp.sizes,
+          data.image04.childImageSharp.sizes,
+        ].map((image, index) =>
+          <FadeReveal delay={index * 200} key={index}>
+            <Img sizes={image} className={'pf-project-green-image'} />
+          </FadeReveal>
+        )
+      }
     </div>
   );
 }

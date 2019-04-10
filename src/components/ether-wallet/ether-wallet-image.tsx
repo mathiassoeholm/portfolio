@@ -1,6 +1,7 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import { graphql, useStaticQuery } from "gatsby"
+import FadeReveal from "../fade-reveal"
 
 const EtherWalletImage: React.FC = () => {
   const data = useStaticQuery(
@@ -18,9 +19,9 @@ const EtherWalletImage: React.FC = () => {
   );
 
   return (
-    <div className={'pf-ether-wallet-image-container'}>
+    <FadeReveal className={'pf-ether-wallet-image-container'}>
       <Img fluid={data.etherWallet.childImageSharp.fluid} className={'pf-ether-wallet-image'} />
-    </div>
+    </FadeReveal>
   );
 }
 

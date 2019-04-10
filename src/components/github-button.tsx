@@ -1,5 +1,6 @@
 import React from 'react';
 import GithubButtonSvg from '../assets/github-button.svg';
+import FadeReveal from "./fade-reveal"
 
 interface Props {
   repoIdentifier: string,
@@ -7,12 +8,14 @@ interface Props {
 
 const GithubButton : React.FC<Props> = (props: Props) => {
   return (
-    <button
-      className={'pf-github-button'}
-      onClick={() => {window.open(`https://github.com/mathiassoeholm/${props.repoIdentifier}`)}}
-    >
-      <GithubButtonSvg />
-    </button>
+    <FadeReveal>
+      <button
+        className={'pf-github-button'}
+        onClick={() => {window.open(`https://github.com/mathiassoeholm/${props.repoIdentifier}`)}}
+      >
+        <GithubButtonSvg />
+      </button>
+    </FadeReveal>
   );
 };
 

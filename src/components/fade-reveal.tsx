@@ -11,6 +11,7 @@ interface Props {
   delay?: number | undefined,
   yOffset: number | undefined,
   xOffset: number | undefined,
+  ease?: string | undefined,
 }
 
 interface State {
@@ -57,7 +58,7 @@ class FadeReveal extends Component<Props, State> {
       transition: {
         duration: this.props.duration || 500,
         delay: this.props.delay,
-        ease: 'backOut',
+        ease: this.props.ease || 'backOut',
       },
     },
   });
