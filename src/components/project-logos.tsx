@@ -19,6 +19,18 @@ const ProjectLogos: React.FC<Props> = (props: Props) => {
         figma: file(relativePath: { eq: "logo-figma.png" }) {
           ...logoData
         }
+        firebase: file(relativePath: { eq: "logo-firebase.png" }) {
+          ...logoData
+        }
+        jest: file(relativePath: { eq: "logo-jest.png" }) {
+          ...logoData
+        }
+        node: file(relativePath: { eq: "logo-node.png" }) {
+          ...logoData
+        }
+        react: file(relativePath: { eq: "logo-react.png" }) {
+          ...logoData
+        }
       }
       fragment logoData on File {
         childImageSharp {
