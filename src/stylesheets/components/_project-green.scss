@@ -7,10 +7,6 @@ $project-green-background: #1FB74A;
 .pf-project-green-background {
   background: $project-green-background;
   width: 100%;
-
-  // Fix seam between clipped-section and this
-  position: relative;
-  top: -2px;
 }
 
 .pf-project-green-content {

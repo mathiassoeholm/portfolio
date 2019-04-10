@@ -31,14 +31,24 @@ const ClippedSectionPart: React.FC<Props> = ({
     topRight,
     bottomRight,
     bottomLeft,
-  ) +(2/16); // Compensate for 2-pixel offset
+  );
+
+  const isTop = bottomRight !== 0 || bottomLeft !== 0;
+
+  // Complicated logic, to remove pixel seam.
+  // The idea is that if it is a top component, the clipping in the top
+  // moves up with 2 pixels.
+  const topLeftDescription = (isTop && `calc(${topLeft}em - 2px)`) || `${topLeft}em`;
+  const topRightDescription = (isTop  && `calc(${topRight}em - 2px)`) || `${topRight}em`;
+  const bottomRightDescription = (!isTop && `calc(${height - bottomRight}em + 2px)`) || `${height - bottomRight}em`;
+  const bottomLeftDescription = (!isTop && `calc(${height - bottomLeft}em + 2px)`) || `${height - bottomLeft}em`;
 
   const clipPolygon = `
     polygon(
-      0 ${topLeft}em,
-      100% ${topRight}em,
-      100% ${height-bottomRight}em,
-      0 ${height-bottomLeft}em
+      0 ${topLeftDescription},
+      100% ${topRightDescription},
+      100% ${bottomRightDescription},
+      0 ${bottomLeftDescription}
     )
   `
 
@@ -50,6 +60,7 @@ const ClippedSectionPart: React.FC<Props> = ({
     top: (topLeft || topRight) && `${-height}em`,
     bottom: (bottomLeft || bottomRight) && `${-height}em`,
     position: 'absolute',
+    zIndex: 1,
   }
 
   return (

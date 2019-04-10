@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet"
 import GridLayout from "../components/grid-layout"
 import ProjectGreenSection from "../components/project-green/project-green-section"
 import EtherWalletSection from "../components/ether-wallet/ether-wallet-section"
+import SpaceLoopsSection from "../components/space-loops/space-loops-section"
 
 interface State {
   didLoad: boolean
@@ -36,7 +37,7 @@ class IndexPage extends Component<{}, State> {
   render() {
     if (this.state.didLoad) {
       return (
-        <div>
+        <>
           <Helmet>
             <link
               href="https://fonts.googleapis.com/css?family=Source+Code+Pro"
@@ -55,7 +56,8 @@ class IndexPage extends Component<{}, State> {
           <GridLayout/>
           <ProjectGreenSection/>
           <EtherWalletSection/>
-        </div>
+          <SpaceLoopsSection />
+        </>
       );
     } else {
       return null;

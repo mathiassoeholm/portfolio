@@ -9,7 +9,7 @@ import GithubButton from "../github-button"
 
 const EtherWalletSection: React.FC = () => {
   return (
-    <div>
+    <>
       <ClippedSectionPart topLeft={8} className={'pf-ether-wallet-clip-part'}/>
       <div className={'pf-ether-wallet-background'}>
         <div className={'pf-ether-wallet-content'}>
@@ -32,7 +32,8 @@ const EtherWalletSection: React.FC = () => {
           <GithubButton repoIdentifier={'trustless-ether-wallet'}/>
         </div>
       </div>
-    </div>
+      <ClippedSectionPart bottomLeft={8} className={'pf-ether-wallet-clip-part'}/>
+    </>
   );
 }
 
