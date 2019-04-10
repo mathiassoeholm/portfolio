@@ -7,7 +7,7 @@ export interface ExperienceDescription {
 
 const experienceDescriptions:{ [index:string] : ExperienceDescription } = {
   'Mindfox': {
-    title: 'Co-Founder & Software Engineer',
+    title: 'Founder/Software Engineer',
     fullName: 'Mindfox Studios',
     period: 'Jun. 2018 - Present',
     description: [
@@ -29,7 +29,7 @@ const experienceDescriptions:{ [index:string] : ExperienceDescription } = {
     ],
   },
   'BitBreak': {
-    title: 'Co-Founder & Software Engineer',
+    title: 'Founder/Software Engineer',
     fullName: 'BitBreak',
     period: 'Nov. 2016 - Jun. 2018',
     description: [
@@ -48,16 +48,16 @@ const experienceDescriptions:{ [index:string] : ExperienceDescription } = {
       'Made tools in Unity which are now used in one of the most downloaded mobile games ever, Subway Surfers.',
     ],
   },
-  'Campus Dj.': {
+  'Game IT': {
     title: 'Workshop Instructor',
-    fullName: 'Campus Djursland',
+    fullName: 'Game IT College',
     period: 'Aug. 2012 - Apr. 2013',
     description: [
       'Teached game development in C# and Unity, with classes of up to 60 students.',
     ],
   },
   'ClearCut': {
-    title: 'Co-Founder & Programmer',
+    title: 'Founder/Programmer',
     fullName: 'ClearCut Games',
     period: 'Mar. 2011 - Apr. 2013',
     description: [

@@ -54,7 +54,7 @@ const ExperienceSection: React.FC = () => {
               'LEGO',
               'BitBreak',
               'Kiloo',
-              'Campus Dj.',
+              'Game IT',
               'ClearCut',
             ].map(createExperienceButton)
           }
