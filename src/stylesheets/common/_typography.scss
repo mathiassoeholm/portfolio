@@ -1,8 +1,8 @@
 @charset "utf-8";
 
-$extra-large-font-size: (null: 21, $md: 19, $sm: 16, $xs: 14);
+$extra-large-font-size: (null: 21, $md: 19, $sm: 16, $xs: 15);
 $large-font-size: (null: 19, $md: 17, $sm: 15, $xs: 13);
-$medium-font-size: (null: 15, $md: 14, $sm: 13, $xs: 13);
+$medium-font-size: (null: 14, $md: 14, $sm: 13, $xs: 13);
 $small-font-size: (null: 13, $md: 13, $sm: 13, $xs: 12);
 $extra-small-font-size: (null: 12, $md: 12, $sm: 12, $xs: 11);
 
@@ -12,4 +12,20 @@ $extra-small-font-size: (null: 12, $md: 12, $sm: 12, $xs: 11);
 
 .pf-clear-text {
   color: $clear-color;
+}
+
+.pf-project-text {
+  @include font-size-map($medium-font-size);
+  padding: 0 em(20);
+  max-width: 760px;
+  margin: auto;
+  font-family: 'Montserrat', sans-serif;
+
+  h2 {
+    font-weight: normal;
+    @include font-size-map($extra-large-font-size);
+  }
+  p {
+    line-height: em(25);
+  }
 }

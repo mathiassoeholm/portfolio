@@ -10,14 +10,51 @@ $ether-wallet-backrgound: #3B5998;
 
   // Fix seam between clipped-section and this
   position: relative;
-  top: -1px;
+  top: -2px;
 }
 
 .pf-ether-wallet-content {
+  font-weight: 300;
   max-width: 1100px;
   color: white;
-  background: blueviolet;
-  height: em(300);
   margin: auto;
+
+  h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    @include font-size-map((null: 42, $md: 42, $sm: 26, $xs: 22));
+    letter-spacing: 0.24em;
+  }
 }
 
+.pf-ether-wallet-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include responsive-property(flex-direction, (
+    null: row,
+    $md: row,
+    $sm: column,
+    $xs: column,
+  ))
+}
+
+.pf-ether-logo {
+  width: em(100);
+}
+
+.pf-ether-wallet-text {
+  padding: 0 em(20);
+}
+
+.pf-ether-wallet-image-container {
+  padding: em(20);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.pf-ether-wallet-image {
+  width: em(500);
+}

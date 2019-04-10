@@ -31,7 +31,7 @@ const ClippedSectionPart: React.FC<Props> = ({
     topRight,
     bottomRight,
     bottomLeft,
-  ) +(1/16); // Compensate for 1-pixel offset
+  ) +(2/16); // Compensate for 2-pixel offset
 
   const clipPolygon = `
     polygon(

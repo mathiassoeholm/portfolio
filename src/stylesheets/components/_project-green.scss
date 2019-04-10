@@ -10,11 +10,10 @@ $project-green-background: #1FB74A;
 
   // Fix seam between clipped-section and this
   position: relative;
-  top: -1px;
+  top: -2px;
 }
 
 .pf-project-green-content {
-  @include font-size-map($medium-font-size);
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -24,13 +23,6 @@ $project-green-background: #1FB74A;
   color: white;
   @include responsive-property-em(padding-bottom, (null: 0, $md: 0, $sm: 40, $xs: 40));
 
-  h1 {
-    font-weight: normal;
-    @include font-size-map($extra-large-font-size);
-  }
-  p {
-    line-height: em(25);
-  }
   a {
     color: #FFF73E;
     text-decoration: none;
@@ -73,10 +65,4 @@ $project-green-background: #1FB74A;
 
 .pf-project-green-logo {
   padding-bottom: em(50);
-}
-
-.pf-project-green-text {
-  max-width: 760px;
-  margin: auto;
-  padding: 0 em(12);
 }

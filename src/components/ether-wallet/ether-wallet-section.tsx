@@ -1,26 +1,31 @@
 import React from 'react';
 import ClippedSectionPart from "../clipped-section-part"
 import { Grid } from "@material-ui/core"
+import EtherLogo from '../../assets/ether-logo.svg';
+import EtherWalletDescription from "./ether-wallet-description"
+import EtherWalletImage from "./ether-wallet-image"
 
 const EtherWalletSection: React.FC = () => {
   return (
     <div>
       <ClippedSectionPart topLeft={8} className={'pf-ether-wallet-clip-part'}/>
       <div className={'pf-ether-wallet-background'}>
-        <Grid container className={'pf-ether-wallet-content'}>
-          <Grid item xs={6} md={12}>
-            Ether Icon goes here
+        <div className={'pf-ether-wallet-content'}>
+          <div className={'pf-ether-wallet-title-container'}>
+            <EtherLogo className={'pf-ether-logo'}/>
+            <h1>
+              trustless ether wallet
+            </h1>
+          </div>
+          <Grid container>
+            <Grid item xs={12} md={6}>
+              <EtherWalletDescription />
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <EtherWalletImage />
+            </Grid>
           </Grid>
-          <Grid item xs={6} md={12}>
-            Title goes here
-          </Grid>
-          <Grid item xs={6} md={12}>
-            Description goes here
-          </Grid>
-          <Grid item xs={6} md={12}>
-            Screenshot goes here
-          </Grid>
-        </Grid>
+        </div>
       </div>
     </div>
   );

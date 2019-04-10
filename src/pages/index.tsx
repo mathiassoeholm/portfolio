@@ -28,6 +28,10 @@ const IndexPage = () => {
             href="https://fonts.googleapis.com/css?family=Montserrat"
             rel="stylesheet"
           />
+          <link
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400"
+            rel="stylesheet"
+          />
         </Helmet>
         <SEO title={"Hire Mathias"} />
         <GridLayout />
