@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { Component, useState } from "react"
 
 import SEO from "../components/seo"
 import { Helmet } from "react-helmet"
@@ -6,39 +6,54 @@ import GridLayout from "../components/grid-layout"
 import ProjectGreenSection from "../components/project-green/project-green-section"
 import EtherWalletSection from "../components/ether-wallet/ether-wallet-section"
 
-const IndexPage = () => {
-  const canCheckFonts = typeof document !== "undefined" && document.fonts
-  const [didLoadFonts, setDidLoadFonts] = useState(false)
+interface State {
+  didLoad: boolean
+}
 
-  if (!didLoadFonts && canCheckFonts) {
-    document.fonts.ready.then(() => {
-      setDidLoadFonts(true)
-    })
+class IndexPage extends Component<{}, State> {
 
-    return <div className={"pf-landing-page"} />
-  } else {
-    return (
-      <div>
-        <Helmet>
-          <link
-            href="https://fonts.googleapis.com/css?family=Source+Code+Pro"
-            rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/css?family=Montserrat"
-            rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400"
-            rel="stylesheet"
-          />
-        </Helmet>
-        <SEO title={"Hire Mathias"} />
-        <GridLayout />
-        <ProjectGreenSection />
-        <EtherWalletSection />
-      </div>
-    )
+  state: State = {
+    didLoad: false,
+  }
+
+  componentDidMount(): void {
+    const loader = document.querySelector('.pf-page-loader-container');
+    setTimeout(() => {
+      if (loader) {
+        loader.classList.add('pf-page-loader-container--hide');
+      }
+
+      this.setState({ didLoad: true })
+    }, 1500);
+  }
+
+  render() {
+    if (this.state.didLoad) {
+      return (
+        <div>
+          <Helmet>
+            <link
+              href="https://fonts.googleapis.com/css?family=Source+Code+Pro"
+              rel="stylesheet"
+            />
+            <link
+              href="https://fonts.googleapis.com/css?family=Montserrat"
+              rel="stylesheet"
+            />
+            <link
+              href="https://fonts.googleapis.com/css?family=Roboto:300,400"
+              rel="stylesheet"
+            />
+          </Helmet>
+          <SEO title={"Hire Mathias"}/>
+          <GridLayout/>
+          <ProjectGreenSection/>
+          <EtherWalletSection/>
+        </div>
+      );
+    } else {
+      return null;
+    }
   }
 }
 
