@@ -1,9 +1,8 @@
 import React from 'react';
-import GithubIcon from '../assets/icons/github.svg'
+import GithubButtonSvg from '../assets/github-button.svg';
 
 interface Props {
   repoIdentifier: string,
-  color: string,
 }
 
 const GithubButton : React.FC<Props> = (props: Props) => {
@@ -12,10 +11,7 @@ const GithubButton : React.FC<Props> = (props: Props) => {
       className={'pf-github-button'}
       onClick={() => {window.open(`https://github.com/mathiassoeholm/${props.repoIdentifier}`)}}
     >
-      <GithubIcon className={'pf-github-button-icon'} style={{ color: props.color }} />
-      <p style={{ color: props.color }}>
-      View on Github
-      </p>
+      <GithubButtonSvg />
     </button>
   );
 };

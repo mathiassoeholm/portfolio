@@ -15,7 +15,7 @@ const ProjectGreenSection: React.FC = () => {
           <div className={'pf-project-green-top-row '}>
             <div className={'pf-project-green-logo-container'} >
               <ProjectGreenLogo className={'pf-project-green-logo'} />
-              <GithubButton repoIdentifier={'project-green'} color={'#1FB74A'}/>
+              <GithubButton repoIdentifier={'project-green'} />
             </div>
             <Hidden smDown>
               <ProjectGreenDescription />
