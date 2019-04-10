@@ -13,7 +13,7 @@ const GithubButton : React.FC<Props> = (props: Props) => {
         className={'pf-github-button'}
         onClick={() => {window.open(`https://github.com/mathiassoeholm/${props.repoIdentifier}`)}}
       >
-        <GithubButtonSvg />
+        <GithubButtonSvg className={'pf-github-button-svg'}/>
       </button>
     </FadeReveal>
   );

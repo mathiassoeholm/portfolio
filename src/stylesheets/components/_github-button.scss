@@ -3,6 +3,10 @@
   transition: 200ms;
 }
 
+.pf-github-button-svg {
+  overflow: visible;
+}
+
 .pf-github-button:hover {
   transform: scale(1.1) rotate(5deg);
 }
