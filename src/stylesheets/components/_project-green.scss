@@ -17,7 +17,6 @@ $project-green-background: #1FB74A;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  max-width: 1100px;
   margin: auto;
   font-family: 'Montserrat', sans-serif;
   color: white;
@@ -39,8 +38,12 @@ $project-green-background: #1FB74A;
 
 .pf-project-green-image-row {
   display: flex;
-  overflow: auto;
-  flex-wrap: nowrap;
+  @media only screen and (max-width: $sm) {
+    overflow: auto;
+  }
+  @media only screen and (min-width: $sm) {
+    justify-content: center;
+  }
 }
 
 .pf-project-green-image {
