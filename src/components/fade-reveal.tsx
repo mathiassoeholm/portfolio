@@ -66,7 +66,7 @@ class FadeReveal extends Component<Props, State> {
   render() {
     return (
       <VisibilitySensor onChange={this.onChangeVisibility} partialVisibility minTopValue={50}>
-        <this.PosedDiv pose={this.state.pose} className={`${this.props.className} pf-fade-reveal`}>
+        <this.PosedDiv pose={this.state.pose} className={`${this.props.className||''} pf-fade-reveal`}>
           {this.props.children}
         </this.PosedDiv>
       </VisibilitySensor>

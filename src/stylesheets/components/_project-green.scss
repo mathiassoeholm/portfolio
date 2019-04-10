@@ -39,7 +39,8 @@ $project-green-background: #1FB74A;
 .pf-project-green-image-row {
   display: flex;
   @media only screen and (max-width: $sm) {
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
   @media only screen and (min-width: $sm) {
     justify-content: center;
@@ -47,7 +48,6 @@ $project-green-background: #1FB74A;
 }
 
 .pf-project-green-image {
-  height: em(567);
   width: em(262);
   border-radius: em(28);
   box-shadow: 0 em(4) em(20) rgba(0, 0, 0, 0.25);
