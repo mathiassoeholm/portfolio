@@ -1,4 +1,22 @@
-.pf-space-loops-background {
-  height: em(400);
-  background: #666666;
+.pf-space-loops-gradient-background {
+  height: em(1000);
+  background: linear-gradient(rgb(49, 19, 93) 0%, rgb(86, 120, 234) 100%);
+  position: relative;
 }
+
+.pf-space-loops-tiling-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  @include responsive-property(background-size, (
+    null: 20%,
+    $md: 20%,
+    $sm: 40%,
+    $xs: 50%
+  ));
+}
+

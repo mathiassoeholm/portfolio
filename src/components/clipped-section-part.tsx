@@ -7,6 +7,7 @@ interface Props {
   bottomRight?: number
   bottomLeft?: number
   className?: string
+  color?: string
 }
 
 const ClippedSectionPart: React.FC<Props> = ({
@@ -15,6 +16,7 @@ const ClippedSectionPart: React.FC<Props> = ({
   bottomRight = 0,
   bottomLeft = 0,
   className,
+  color,
 }: Props) => {
 
   const md = '960px';
@@ -61,6 +63,9 @@ const ClippedSectionPart: React.FC<Props> = ({
     bottom: (bottomLeft || bottomRight) && `${-height}em`,
     position: 'absolute',
     zIndex: 1,
+    // Yet another measure for removing seams
+    border: `1rem solid ${color}`,
+    outline: `1rem solid ${color}`,
   }
 
   return (
