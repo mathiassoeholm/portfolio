@@ -1,0 +1,22 @@
+.pf-image-row {
+  display: flex;
+
+  @media only screen and (max-width: $sm) {
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
+  @media only screen and (min-width: $sm) {
+    justify-content: center;
+    overflow: hidden;
+  }
+}
+
+.pf-image-row-child {
+  width: em(262);
+  border-radius: em(28);
+  box-shadow: 0 em(4) em(20) rgba(0, 0, 0, 0.25);
+  flex: 0 0 auto;
+  margin: em(15);
+  overflow: visible;
+  z-index: 1;
+}

@@ -3,8 +3,8 @@ import ProjectGreenLogo from '../../assets/project-green.svg'
 import ProjectGreenDescription from "./project-green-description"
 import { Hidden } from "@material-ui/core"
 import GithubButton from "../github-button"
-import ProjectGreenImageRow from "./project-green-image-row"
 import ClippedSectionPart from "../clipped-section-part"
+import ImageRow from "../image-row"
 
 const ProjectGreenSection: React.FC = () => {
   return (
@@ -21,7 +21,7 @@ const ProjectGreenSection: React.FC = () => {
               <ProjectGreenDescription />
             </Hidden>
           </div>
-          <ProjectGreenImageRow />
+          <ImageRow images={['projectGreen01', 'projectGreen02', 'projectGreen03', 'projectGreen04']} />
           <Hidden mdUp>
             <ProjectGreenDescription />
           </Hidden>
