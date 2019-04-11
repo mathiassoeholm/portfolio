@@ -6,6 +6,9 @@
   flex-direction: column;
   align-items: center;
   padding-top: em(140);
+  padding-bottom: em(60);
+
+  color: white;
 }
 
 .pf-space-loops-tiling-background {
@@ -22,18 +25,24 @@
     $sm: 40%,
     $xs: 50%
   ));
-
 }
 
 .pf-space-loops-logo {
-
   max-width: em(300);
   width: 50%;
   margin-bottom: em(40);
 }
 
 .pf-space-loops-splash {
-  max-width: em(800);
+  margin-top: em(30);
+  max-width: em(600);
   width: 100%;
-  margin-bottom: em(50);
+}
+
+.pf-space-loops-top-grid {
+  max-width: 1100px;
+
+  // Increase z-index because otherwise the tiling background
+  // makes links in the description un-clickable.
+  z-index: 1;
 }

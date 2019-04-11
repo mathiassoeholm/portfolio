@@ -9,13 +9,18 @@
     null: 70,
     $md: 70,
     $sm: 70,
-    $xs: 50,
+    $xs: 60,
   ));
   @include responsive-property-em(width, (
     null: 70,
     $md: 70,
     $sm: 70,
-    $xs: 50,
+    $xs: 60,
   ));
-  margin: em(10);
+  @include responsive-property-em(margin, (
+    null: 10,
+    $md: 10,
+    $sm: 10,
+    $xs: 5,
+  ));
 }

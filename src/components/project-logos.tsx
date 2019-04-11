@@ -32,6 +32,9 @@ const ProjectLogos: React.FC<Props> = (props: Props) => {
         react: file(relativePath: { eq: "logo-react.png" }) {
           ...logoData
         }
+        unity: file(relativePath: { eq: "logo-unity.png" }) {
+          ...logoData
+        }
       }
       fragment logoData on File {
         childImageSharp {

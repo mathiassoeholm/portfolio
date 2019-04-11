@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from 'gatsby-image';
 import { Grid } from "@material-ui/core"
 import ImageRow from "../image-row"
+import SpaceLoopsDescription from "./space-loops-description"
 
 const SpaceLoopsSection: React.FC = () => {
   const data = useStaticQuery(
@@ -36,17 +37,21 @@ const SpaceLoopsSection: React.FC = () => {
   return (
     <div className={'pf-space-loops-gradient-background'}>
       <div
-        className={'pf-space-loops-tiling-background'}
-        style={{ backgroundImage: `url(${data.starsBackground.childImageSharp.fluid.src})`}}
-      />
+      className={'pf-space-loops-tiling-background'}
+      style={{ backgroundImage: `url(${data.starsBackground.childImageSharp.fluid.src})`}}
+    />
       <Img fluid={data.spaceLoopsLogo.childImageSharp.fluid} className={'pf-space-loops-logo'}/>
-      <Img fluid={data.spaceLoopsSplash.childImageSharp.fluid} className={'pf-space-loops-splash'}/>
-      <Grid container>
-        <Grid item md={12} xs={12}>
-          <ImageRow images={['spaceLoops01', 'spaceLoops02', 'spaceLoops03']} />
+      <Grid container className={'pf-space-loops-top-grid'}>
+        <Grid item md={7} xs={12}>
+          <div className={'pf-space-loops-splash-parent'}>
+            <Img fluid={data.spaceLoopsSplash.childImageSharp.fluid} className={'pf-space-loops-splash'}/>
+          </div>
         </Grid>
-        <Grid item md={12} xs={12}>
-
+        <Grid item md={5} xs={12}>
+          <SpaceLoopsDescription />
+        </Grid>
+        <Grid item xs={12}>
+          <ImageRow images={['spaceLoops01', 'spaceLoops02', 'spaceLoops03']} />
         </Grid>
       </Grid>
     </div>
