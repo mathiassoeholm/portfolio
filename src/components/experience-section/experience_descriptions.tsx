@@ -14,7 +14,7 @@ const experienceDescriptions:{ [index:string] : ExperienceDescription } = {
       'Shipped two original mobile games, Space Loops and Sausage Throw.',
       'Worked with React Native to implement Odin ICE-Pro, from design to release in just three weeks.\n',
       'Mobile development consultancy for LEGO.',
-      'Other clients include Kamstrup, AKQA, Novo Nordisk and Destination Aarhus.',
+      'Other clients include Stibo, Kamstrup, AKQA, Novo Nordisk and Destination Aarhus.',
     ],
   },
   'LEGO': {

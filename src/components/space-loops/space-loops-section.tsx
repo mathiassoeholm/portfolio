@@ -44,9 +44,7 @@ const SpaceLoopsSection: React.FC = () => {
       <Img fluid={data.spaceLoopsLogo.childImageSharp.fluid} className={'pf-space-loops-logo'}/>
       <Grid container className={'pf-space-loops-top-grid'}>
         <Grid item md={7} xs={12}>
-          <FadeReveal>
-            <Img fluid={data.spaceLoopsSplash.childImageSharp.fluid} className={'pf-space-loops-splash'}/>
-          </FadeReveal>
+          <Img fluid={data.spaceLoopsSplash.childImageSharp.fluid} className={'pf-space-loops-splash'}/>
         </Grid>
         <Grid item md={5} xs={12}>
           <SpaceLoopsDescription />
