@@ -1,6 +1,6 @@
 .pf-space-loops-gradient-background {
   height: em(1000);
-  background: linear-gradient(rgb(49, 19, 93) 0%, rgb(86, 120, 234) 100%);
+  background: linear-gradient(rgb(49, 19, 93) 0%, #1783D2 100%);
   position: relative;
 }
 
@@ -18,5 +18,18 @@
     $sm: 40%,
     $xs: 50%
   ));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: em(140);
 }
 
+.pf-space-loops-logo {
+  max-width: em(300);
+  width: 50%;
+}
+
+.pf-space-loops-splash {
+  max-width: em(800);
+  width: 100%;
+}
