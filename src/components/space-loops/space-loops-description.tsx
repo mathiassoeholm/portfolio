@@ -13,8 +13,8 @@ const SpaceLoopsDescription: React.FC = () => {
         </p>
         <h2>Technology</h2>
         <p>
-          Space Loops was built with Unity. Firebase’ realtime database is used for cloud synchronization and Facebook for authentication.
-          We set up a continuos integration pipeline with Fastlane and GitLab.
+          Space Loops was built with <a href={'https://unity.com'} target={'_blank'}>Unity</a>. For cloud save, we used <a href={'https://firebase.google.com/products/realtime-database'} target={'_blank'}>Firebase' realtime database</a> and
+          Facebook for authentication. A continuos integration pipeline was set up with <a href={'https://fastlane.tools'} target={'_blank'}>Fastlane</a> and GitLab.
         </p>
       </FadeReveal>
       <ProjectLogos logos={['unity', 'firebase', 'fastlane']}/>

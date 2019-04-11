@@ -4,6 +4,7 @@ import Img from 'gatsby-image';
 import { Grid } from "@material-ui/core"
 import ImageRow from "../image-row"
 import SpaceLoopsDescription from "./space-loops-description"
+import FadeReveal from "../fade-reveal"
 
 const SpaceLoopsSection: React.FC = () => {
   const data = useStaticQuery(
@@ -43,9 +44,9 @@ const SpaceLoopsSection: React.FC = () => {
       <Img fluid={data.spaceLoopsLogo.childImageSharp.fluid} className={'pf-space-loops-logo'}/>
       <Grid container className={'pf-space-loops-top-grid'}>
         <Grid item md={7} xs={12}>
-          <div className={'pf-space-loops-splash-parent'}>
+          <FadeReveal>
             <Img fluid={data.spaceLoopsSplash.childImageSharp.fluid} className={'pf-space-loops-splash'}/>
-          </div>
+          </FadeReveal>
         </Grid>
         <Grid item md={5} xs={12}>
           <SpaceLoopsDescription />

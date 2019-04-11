@@ -28,11 +28,6 @@ $ether-wallet-backrgound: #3B5998;
     @include font-size-map((null: 42, $md: 42, $sm: 26, $xs: 22));
     letter-spacing: 0.24em;
   }
-
-  a {
-    color: #FFF73E;
-    text-decoration: none;
-  }
 }
 
 .pf-ether-wallet-title-container {

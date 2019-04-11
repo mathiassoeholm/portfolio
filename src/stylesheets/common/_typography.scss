@@ -28,6 +28,10 @@ $extra-small-font-size: (null: 12, $md: 12, $sm: 12, $xs: 11);
   p {
     line-height: em(25);
   }
+  a {
+    color: #FFF73E;
+    text-decoration: none;
+  }
   a:hover {
     font-weight: 900;
   }

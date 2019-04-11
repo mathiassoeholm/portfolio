@@ -17,11 +17,6 @@ $project-green-background: #1FB74A;
   font-family: 'Montserrat', sans-serif;
   color: white;
   @include responsive-property-em(padding-bottom, (null: 0, $md: 0, $sm: 40, $xs: 40));
-
-  a {
-    color: #FFF73E;
-    text-decoration: none;
-  }
 }
 
 .pf-project-green-top-row {
