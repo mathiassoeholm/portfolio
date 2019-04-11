@@ -5,7 +5,17 @@
 }
 
 .pf-project-logo {
-  width: em(70);
-  height: em(70);
+  @include responsive-property-em(height, (
+    null: 70,
+    $md: 70,
+    $sm: 70,
+    $xs: 50,
+  ));
+  @include responsive-property-em(width, (
+    null: 70,
+    $md: 70,
+    $sm: 70,
+    $xs: 50,
+  ));
   margin: em(10);
 }
