@@ -12,6 +12,7 @@ interface Props {
   yOffset: number | undefined,
   xOffset: number | undefined,
   ease?: string | undefined,
+  noMovement?: boolean | undefined,
 }
 
 interface State {
@@ -47,14 +48,14 @@ class FadeReveal extends Component<Props, State> {
   PosedDiv = posed.div({
     hidden: {
       opacity: 0,
-      y: this.props.yOffset,
-      x: this.props.xOffset,
+      y: !this.props.noMovement && this.props.yOffset,
+      x: !this.props.noMovement && this.props.xOffset,
     },
     visible: {
       opacity: 1,
       staggerChildren: this.props.staggerChildren,
-      y: this.props.yOffset && 0,
-      x: this.props.xOffset && 0,
+      y: !this.props.noMovement && this.props.yOffset && 0,
+      x: !this.props.noMovement && this.props.xOffset && 0,
       transition: {
         duration: this.props.duration || 500,
         delay: this.props.delay,

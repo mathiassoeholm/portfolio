@@ -1,0 +1,20 @@
+.pf-scroll-down-indicator {
+  position: absolute;
+  bottom: em(5);
+  left: 50%;
+  transform: translateX(-50%);
+  width: em(30);
+  color: $accent-color;
+  animation: bounce 1s infinite;
+  transition: 500ms;
+}
+
+.pf-scroll-down-indicator--hidden {
+  opacity: 0;
+}
+
+@keyframes bounce {
+  0% { bottom: em(5); }
+  50%   { bottom: em(20); }
+  100% { bottom: em(5); }
+}

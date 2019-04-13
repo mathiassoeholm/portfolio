@@ -1,8 +1,5 @@
 import React from 'react';
 import LoadingText from "./loading-text"
-import posed from "react-pose"
-
-const PosedDiv = posed.div({});
 
 const JsonBio: React.FC = () => {
   const renderKeyValue = (key: string, value: string, index: number) => {
@@ -37,7 +34,7 @@ const JsonBio: React.FC = () => {
   }
 
   return (
-    <PosedDiv className={'pf-json-bio-container'}>
+    <div className={'pf-json-bio-container'}>
       <p className={'pf-json-bio'}>
         <span className={'pf-clear-text'}>{`{`}</span>
         <br />
@@ -62,7 +59,7 @@ const JsonBio: React.FC = () => {
         <br />
         <span className={'pf-clear-text'}>{`}`}</span><br />
       </p>
-    </PosedDiv>
+    </div>
   );
 }
 
