@@ -1,3 +1,7 @@
+.pf-scroll-down-indicator-svg {
+  overflow: visible;
+}
+
 .pf-scroll-down-indicator {
   position: absolute;
   bottom: em(5);
@@ -7,6 +11,7 @@
   color: $accent-color;
   animation: bounce 1s infinite;
   transition: 500ms;
+  cursor: pointer;
 }
 
 .pf-scroll-down-indicator--hidden {

@@ -24,12 +24,14 @@
     "react-dom": "^16.8.5",
     "react-helmet": "^5.2.0",
     "react-pose": "^4.0.8",
-    "react-visibility-sensor": "^5.0.2"
+    "react-visibility-sensor": "^5.0.2",
+    "smoothscroll-polyfill": "^0.4.4"
   },
   "devDependencies": {
     "@types/react": "^16.8.9",
-    "@types/react-visibility-sensor": "^5.0.1",
     "@types/react-helmet": "^5.0.8",
+    "@types/react-visibility-sensor": "^5.0.1",
+    "@types/smoothscroll-polyfill": "^0.3.1",
     "prettier": "^1.16.4"
   },
   "keywords": [

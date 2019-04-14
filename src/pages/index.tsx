@@ -6,6 +6,9 @@ import GridLayout from "../components/grid-layout"
 import ProjectGreenSection from "../components/project-green/project-green-section"
 import EtherWalletSection from "../components/ether-wallet/ether-wallet-section"
 import SpaceLoopsSection from "../components/space-loops/space-loops-section"
+import smoothscroll from 'smoothscroll-polyfill';
+
+smoothscroll.polyfill();
 
 interface State {
   didLoad: boolean

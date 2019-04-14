@@ -2,7 +2,11 @@ import React, { Component } from "react"
 import ChevronIcon from "../../assets/icons/chevron-down-solid.svg"
 import FadeReveal from "../fade-reveal"
 
-class ScrollDownIndicator extends Component {
+interface Props {
+  onClick: () => void,
+}
+
+class ScrollDownIndicator extends Component<Props> {
 
   onScroll = () => {
     const indicator = document.querySelector('.pf-scroll-down-indicator');
@@ -22,7 +26,9 @@ class ScrollDownIndicator extends Component {
   render() {
     return (
       <FadeReveal delay={4600} ease={'easeOut'} noMovement >
-        <ChevronIcon className={"pf-scroll-down-indicator"}/>
+        <button onClick={this.props.onClick} className={"pf-scroll-down-indicator"}>
+          <ChevronIcon className={'pf-scroll-down-indicator-svg'}/>
+        </button>
       </FadeReveal>
     );
   }
