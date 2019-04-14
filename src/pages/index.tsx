@@ -8,7 +8,9 @@ import EtherWalletSection from "../components/ether-wallet/ether-wallet-section"
 import SpaceLoopsSection from "../components/space-loops/space-loops-section"
 import smoothscroll from 'smoothscroll-polyfill';
 
-smoothscroll.polyfill();
+if (typeof window !== 'undefined') {
+  smoothscroll.polyfill();
+}
 
 interface State {
   didLoad: boolean
