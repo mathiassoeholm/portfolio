@@ -5,6 +5,7 @@ import FadeReveal from "./fade-reveal"
 
 interface Props {
   images: string[]
+  imageClassName?: string
 }
 
 const ImageRow: React.FC<Props> = (props: Props) => {
@@ -48,7 +49,11 @@ const ImageRow: React.FC<Props> = (props: Props) => {
       {
         props.images.map((image, index) =>
           <FadeReveal delay={index * 200} key={index}>
-            <Img sizes={data[image].childImageSharp.sizes} className={'pf-image-row-child'} />
+            <Img
+
+              sizes={data[image].childImageSharp.sizes}
+              className={`pf-image-row-child ${props.imageClassName || ''}`}
+            />
           </FadeReveal>
         )
       }

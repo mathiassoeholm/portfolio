@@ -21,7 +21,10 @@ const ProjectGreenSection: React.FC = () => {
               <ProjectGreenDescription />
             </Hidden>
           </div>
-          <ImageRow images={['projectGreen01', 'projectGreen02', 'projectGreen03', 'projectGreen04']} />
+          <ImageRow
+            images={['projectGreen01', 'projectGreen02', 'projectGreen03', 'projectGreen04']}
+            imageClassName={'pf-scale-up-on-hover'}
+          />
           <Hidden mdUp>
             <ProjectGreenDescription />
           </Hidden>
