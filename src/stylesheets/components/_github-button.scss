@@ -8,7 +8,10 @@
   width: 100%;
 }
 
-.pf-github-button:hover {
-  transform: scale(1.1) rotate(5deg);
+@media (hover: hover) {
+  .pf-github-button:hover {
+    transform: scale(1.1) rotate(5deg);
+  }
 }
+
 
