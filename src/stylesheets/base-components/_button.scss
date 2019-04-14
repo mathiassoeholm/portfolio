@@ -9,11 +9,14 @@
   align-items: center;
   color: $accent-color;
   font-family: 'Source Code Pro', monospace;
-  transition: 0.3s;
+  transition: linear 0.3s;
   background-color: transparent;
   cursor: pointer;
+}
 
-  &:hover {
-    background-color: shade($accent-color, 65%);
+@media (hover: hover) {
+  %pf-button:hover {
+    background-color: $accent-color;
+    color: $landing-page-top-color;
   }
 }
