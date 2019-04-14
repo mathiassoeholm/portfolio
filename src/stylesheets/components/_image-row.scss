@@ -24,10 +24,10 @@
 
 .pf-scale-up-on-hover {
   transition: 200ms;
-}
 
-.pf-scale-up-on-hover:hover  {
-  @media only screen and (min-width: $sm) {
-    transform: translateY(em(-60)) scale(1.1);
+  &:hover {
+    @media only screen and (min-width: $sm) {
+      transform: translateY(em(-60)) scale(1.1);
+    }
   }
 }

@@ -12,8 +12,8 @@
   transition: 0.3s;
   background-color: transparent;
   cursor: pointer;
-}
 
-%pf-button:hover {
-  background-color: shade($accent-color, 65%);
+  &:hover {
+    background-color: shade($accent-color, 65%);
+  }
 }
