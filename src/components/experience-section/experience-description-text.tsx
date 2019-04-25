@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { ExperienceDescription } from "./experience_descriptions";
 import { sleep } from "../../utility/time-util";
 import posed from 'react-pose';
+import { createTextMutator } from "./text-mutator"
 
 const PosedUl = posed.ul({
   visible: {
@@ -26,7 +27,7 @@ const PosedLi = posed.li({
   },
 });
 
-interface State {
+export interface State {
   currentValue: ExperienceDescription,
   nonce: number,
   descriptionPose: string,
@@ -88,7 +89,7 @@ class ExperienceDescriptionText extends Component<Props, State> {
   }
 
   mutateStateTextWithKey = async (fromText: string, toText: string, nonce: number, key: string) => {
-    await this.mutateText(
+    await this.textMutator(
       fromText,
       toText,
       nonce,
@@ -101,30 +102,7 @@ class ExperienceDescriptionText extends Component<Props, State> {
     );
   }
 
-  mutateText = async (fromText: string, toText: string, nonce: number, set: (text: string) => void) => {
-    const duration = 500; // ms
-    const textLengthDiff = fromText.length - toText.length;
-    let changedText = fromText;
-
-    for (let i = 0; i < toText.length + Math.max(0, textLengthDiff); i++) {
-
-      if (i < toText.length) {
-        changedText = toText.substr(0, i+1)
-          + fromText.substr(i+1, fromText.length);
-      }
-
-      const lettersToRemove = Math.max(0, Math.min(i+1, textLengthDiff));
-
-      set(changedText.substr(0, changedText.length-lettersToRemove));
-
-      await sleep(duration/toText.length)
-
-      // Prevents running several animations on same text concurrently
-      if (nonce !== this.state.nonce) {
-        return;
-      }
-    }
-  }
+  textMutator = createTextMutator(sleep, () => this.state.nonce)
 
   hideAndShowDescription = async (newDescription: string[], nonce: number) => {
 
