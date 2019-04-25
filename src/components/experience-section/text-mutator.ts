@@ -15,8 +15,14 @@ export const createTextMutator = (sleep: SleepFunction, getCurrentNonce: () => n
       }
 
       const lettersToRemove = Math.max(0, Math.min(i+1, textLengthDiff));
+      const emittedText = changedText.substr(0, changedText.length-lettersToRemove)
 
-      set(changedText.substr(0, changedText.length-lettersToRemove));
+      set(emittedText);
+
+      // Check if we can make an early exit
+      if (emittedText === toText) {
+        return;
+      }
 
       await sleep(duration/toText.length)
 
