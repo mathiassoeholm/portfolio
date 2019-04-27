@@ -1,16 +1,24 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
-import ExperienceButton from "./experience-button"
+import ExperienceButton from './experience-button'
+import { render } from 'react-testing-library'
 
-// Read this: https://github.com/Popmotion/popmotion/issues/736
-// And this: https://github.com/facebook/react/issues/7740#issuecomment-247335106
 
 describe('experience-button', () => {
-  it('Changes when selected', () => {
-    const tree = renderer
-      .create(<ExperienceButton text="Button" onClick={() => {}} />)
-      .toJSON()
+  it('renders correctly while selected', () => {
 
-    expect(tree).toMatchSnapshot()
+    const { container } = render(
+      <ExperienceButton text="Button" selected onClick={() => {}} />
+    )
+
+    expect(container.firstChild).toMatchSnapshot()
+  })
+
+  it('renders correctly while not selected', () => {
+
+    const { container } = render(
+      <ExperienceButton text="Button" onClick={() => {}} />
+    )
+
+    expect(container.firstChild).toMatchSnapshot()
   })
 })

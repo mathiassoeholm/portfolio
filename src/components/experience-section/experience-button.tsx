@@ -21,9 +21,9 @@ const PosedButton = posed.button({
 const ExperienceButton: React.FC<Props> = (props: Props) => {
   return (
     <PosedButton
-        className={'pf-experience-button'}
-        onClick={props.onClick}
-        pose={props.selected ? 'selected' : 'unselected'}
+      className={'pf-experience-button'}
+      onClick={props.onClick}
+      pose={props.selected ? 'selected' : 'unselected'}
     >
       {props.text}
     </PosedButton>

@@ -29,15 +29,17 @@ const PosedLi = posed.li({
 
 export interface State {
   currentValue: ExperienceDescription,
-  nonce: number,
   descriptionPose: string,
 }
 
 interface Props {
   setSetText: (setText: (experienceDescription: ExperienceDescription) => void) => void,
+  sleepOverride?: (ms: number) => Promise<void>,
 }
 
 class ExperienceDescriptionText extends Component<Props, State> {
+  nonce = 0
+
   state: State = {
     currentValue: {
       title: '',
@@ -45,7 +47,6 @@ class ExperienceDescriptionText extends Component<Props, State> {
       period: '',
       description: [],
     },
-    nonce: 0,
     descriptionPose: 'hidden',
   }
 
@@ -54,33 +55,32 @@ class ExperienceDescriptionText extends Component<Props, State> {
   }
 
   setText = (experienceDescription: ExperienceDescription) => {
-    const nonce = this.state.nonce + 1;
+    this.nonce += 1;
 
     this.mutateStateTextWithKey(
       this.state.currentValue.title,
       experienceDescription.title,
-      nonce,
+      this.nonce,
       'title',
     );
 
     this.mutateStateTextWithKey(
       this.state.currentValue.fullName,
       experienceDescription.fullName,
-      nonce,
+      this.nonce,
       'fullName',
     );
 
     this.mutateStateTextWithKey(
       this.state.currentValue.period,
       experienceDescription.period,
-      nonce,
+      this.nonce,
       'period',
     );
 
-    this.hideAndShowDescription(experienceDescription.description, nonce);
+    this.hideAndShowDescription(experienceDescription.description, this.nonce);
 
     this.setState({
-      nonce,
       currentValue: {
         ...this.state.currentValue,
         description: experienceDescription.description,
@@ -102,7 +102,7 @@ class ExperienceDescriptionText extends Component<Props, State> {
     );
   }
 
-  textMutator = createTextMutator(sleep, () => this.state.nonce)
+  textMutator = createTextMutator(this.props.sleepOverride || sleep, () => this.nonce)
 
   hideAndShowDescription = async (newDescription: string[], nonce: number) => {
 
@@ -111,8 +111,10 @@ class ExperienceDescriptionText extends Component<Props, State> {
         descriptionPose: 'hidden',
       })
 
-      await sleep(200);
-      if (nonce !== this.state.nonce) {
+      let sleepFunc = this.props.sleepOverride || sleep
+
+      await sleepFunc(200);
+      if (nonce !== this.nonce) {
         return;
       }
     }

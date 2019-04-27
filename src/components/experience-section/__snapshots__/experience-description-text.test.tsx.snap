@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`experience-description-text renders the text set by setText 1`] = `
+<div
+  class="pf-experience-text"
+>
+  <p
+    class="pf-title"
+  >
+    Founder/Software Engineer
+  </p>
+  <p>
+    @ 
+    Mindfox Studios
+  </p>
+  <p
+    class="pf-period"
+  >
+    Jun. 2018 - Present
+  </p>
+  <ul
+    class="pf-description"
+  >
+    <li
+      style="opacity: 0.15972222222222232; transform: translateY(42.013888888888886px) translateZ(0);"
+    >
+      Shipped two original mobile games, Space Loops and Sausage Throw.
+    </li>
+    <li
+      style="opacity: 0; transform: translateY(50px) translateZ(0);"
+    >
+      Worked with React Native to implement Odin ICE-Pro, from design to release in just three weeks.
+
+    </li>
+    <li
+      style="opacity: 0; transform: translateY(50px) translateZ(0);"
+    >
+      Mobile development consultancy for LEGO.
+    </li>
+    <li
+      style="opacity: 0; transform: translateY(50px) translateZ(0);"
+    >
+      Other clients include Stibo, Kamstrup, AKQA, Novo Nordisk and Destination Aarhus.
+    </li>
+  </ul>
+</div>
+`;
