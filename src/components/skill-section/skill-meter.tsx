@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import { Hidden } from "@material-ui/core"
-import { sleep } from "../../utility/time-util"
 import Easing from '../../utility/easing';
 import posed from "react-pose"
 
@@ -30,7 +29,6 @@ interface State {
 
 const meterSize = 36;
 const animDuration = 600; // ms
-const timeStep = 20; // ms
 
 class SkillMeter extends Component<Props> {
 
@@ -38,25 +36,39 @@ class SkillMeter extends Component<Props> {
     currentValue: 0,
   }
 
+  animStart: number|undefined
+  animFrame: number|undefined
+
+  animationLoop = (time: number) => {
+    if (!this.animStart) {
+      this.animStart = time
+    }
+
+    const elapsedTime = time - this.animStart
+    const t = elapsedTime/animDuration
+    const eased = Math.min(1, Easing.easeOutQuad(t));
+
+    this.setState({
+      currentValue: Math.min(eased*this.props.value),
+    });
+
+    if (t < 1) {
+      this.animFrame = requestAnimationFrame(this.animationLoop)
+    }
+  }
+
   componentDidMount(): void {
     this.props.setStartAnimation(this.startAnimation);
   }
 
-  startAnimation = async () => {
-    await sleep(200);
-
-    for (let t = 0; t < 1; t += timeStep / animDuration) {
-      const eased = Math.min(1, Easing.easeOutQuad(t));
-      this.setState({
-        currentValue: Math.min(eased*this.props.value),
-      });
-
-      await sleep(timeStep);
+  componentWillUnmount(): void {
+    if (this.animFrame) {
+      cancelAnimationFrame(this.animFrame)
     }
+  }
 
-    this.setState({
-      currentValue: this.props.value,
-    });
+  startAnimation = async () => {
+    this.animFrame = requestAnimationFrame(this.animationLoop)
   }
 
   render() {

@@ -14,6 +14,8 @@ let animationStarters: (() => void)[] = [];
 const SkillsSection: React.FC = () => {
 
   const startAnimation = async () => {
+    await sleep(200);
+
     for (let i = 0; i < animationStarters.length; i++) {
       animationStarters[i]();
 
