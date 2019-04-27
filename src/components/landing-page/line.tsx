@@ -10,24 +10,13 @@ interface Props {
 class Line extends Component<Props> {
   PosedLine = posed.div({
     hidden: {
-      height: '0%'
+      transform: `translateY(-105%) ${this.props.transform || ''}`,
     },
     visible: {
-      height: this.props.height,
+      transform: `translateY(0%) ${this.props.transform || ''}`,
       transition: {
         duration: 2000,
       },
-    },
-  });
-
-  PosedLineHead = posed.div({
-    passive: {
-      // Set opacity based on parents height
-      opacity: [
-        'height',
-        (h: string) => h === '0%' ? 0 : 1,
-        true, // Listen to parent
-      ]
     },
   });
 
@@ -36,9 +25,9 @@ class Line extends Component<Props> {
     return (
       <this.PosedLine
         className={'pf-line'}
-        style={{ left: this.props.left, transform: this.props.transform }}
+        style={{ left: this.props.left, height: this.props.height }}
       >
-        <this.PosedLineHead className={'pf-line-head'}/>
+        <div className={'pf-line-head'}/>
       </this.PosedLine>
     )
   }
