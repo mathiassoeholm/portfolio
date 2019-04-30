@@ -1,6 +1,6 @@
-type SleepFunction = (ms: number) => Promise<void>
+type DelayFunction = (ms: number) => Promise<any>
 
-export const createTextMutator = (sleep: SleepFunction, getCurrentNonce: () => number) => {
+export const createTextMutator = (delay: DelayFunction, getCurrentNonce: () => number) => {
 
   return async (fromText: string, toText: string, nonce: number, set: (text: string) => void) => {
     const duration = 500; // ms
@@ -24,7 +24,7 @@ export const createTextMutator = (sleep: SleepFunction, getCurrentNonce: () => n
         return;
       }
 
-      await sleep(duration/toText.length)
+      await delay(duration/toText.length)
 
       // Prevents running several animations on same text concurrently
       if (nonce !== getCurrentNonce()) {

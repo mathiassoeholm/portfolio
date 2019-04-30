@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ExperienceDescription } from "./experience_descriptions";
-import { sleep } from "../../utility/time-util";
+import { delay } from '@mathiassoeholm/js-utils/async';
 import posed from 'react-pose';
 import { createTextMutator } from "./text-mutator"
 
@@ -34,7 +34,7 @@ export interface State {
 
 interface Props {
   setSetText: (setText: (experienceDescription: ExperienceDescription) => void) => void,
-  sleepOverride?: (ms: number) => Promise<void>,
+  delayOverride?: (ms: number) => Promise<void>,
 }
 
 class ExperienceDescriptionText extends Component<Props, State> {
@@ -102,7 +102,7 @@ class ExperienceDescriptionText extends Component<Props, State> {
     );
   }
 
-  textMutator = createTextMutator(this.props.sleepOverride || sleep, () => this.nonce)
+  textMutator = createTextMutator(this.props.delayOverride || delay, () => this.nonce)
 
   hideAndShowDescription = async (newDescription: string[], nonce: number) => {
 
@@ -111,9 +111,9 @@ class ExperienceDescriptionText extends Component<Props, State> {
         descriptionPose: 'hidden',
       })
 
-      let sleepFunc = this.props.sleepOverride || sleep
+      let delayFunc = this.props.delayOverride || delay
 
-      await sleepFunc(200);
+      await delayFunc(200);
       if (nonce !== this.nonce) {
         return;
       }

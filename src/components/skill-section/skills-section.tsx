@@ -1,7 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import SectionHeader, { SectionHeaderType } from "../section-header"
 import SkillMeter from "./skill-meter"
-import { sleep } from "../../utility/time-util"
+import { delay } from '@mathiassoeholm/js-utils/async'
 import FadeReveal from "../fade-reveal"
 
 interface SkillDescription {
@@ -14,13 +14,13 @@ let animationStarters: (() => void)[] = [];
 const SkillsSection: React.FC = () => {
 
   const startAnimation = async () => {
-    await sleep(200);
+    await delay(200);
 
     for (let i = 0; i < animationStarters.length; i++) {
       animationStarters[i]();
 
       // Stagger animation
-      await sleep(100);
+      await delay(100);
     }
   }
 

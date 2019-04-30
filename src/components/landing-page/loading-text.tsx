@@ -1,5 +1,5 @@
 import React, { Component, ReactNode } from "react"
-import { sleep } from "../../utility/time-util"
+import { delay } from '@mathiassoeholm/js-utils/async'
 
 interface Props {
   finalText: string,
@@ -39,17 +39,17 @@ class LoadingText extends Component<Props, State> {
           this.setState({currentText: '.'.repeat(i)});
         }
 
-        await sleep(150);
+        await delay(150);
       }
     }
 
     if (this.props.extraDelay) {
-      await sleep(this.props.extraDelay);
+      await delay(this.props.extraDelay);
     }
 
     for (let i = 0; i < this.props.finalText.length; i++) {
       this.setState({currentText: this.props.finalText.slice(0, i+1)});
-      await sleep(600/this.props.finalText.length);
+      await delay(600/this.props.finalText.length);
     }
 
     this.setState({isDone: true});

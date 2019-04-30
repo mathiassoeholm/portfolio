@@ -970,6 +970,11 @@
     prop-types "^15.6.0"
     react-is "^16.6.3"
 
+"@mathiassoeholm/js-utils@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@mathiassoeholm/js-utils/-/js-utils-1.0.4.tgz#1f551d34a9a5354e96b896503cca07dce119f576"
+  integrity sha512-p3k8sJmU7RtC2muBe/ioifd/0+9mCmDFWMlerUWl0RYR/s1vfIipcbWRcHOymgCiNjhkO234cRWzwDXsLWkbVQ==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
