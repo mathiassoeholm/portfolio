@@ -1,7 +1,8 @@
-import React, { Component } from "react"
+import React, { useEffect, useState } from "react"
 import { Hidden } from "@material-ui/core"
 import Easing from '../../utility/easing';
 import posed from "react-pose"
+import { useAnimation } from "../../hooks/use-animation"
 
 const PosedP = posed.p({
   hidden: {
@@ -23,68 +24,36 @@ interface Props {
   setStartAnimation: (startAnimation: () => void) => void,
 }
 
-interface State {
-  currentValue: number,
-}
-
 const meterSize = 36;
-const animDuration = 600; // ms
 
-class SkillMeter extends Component<Props> {
+const SkillMeter: React.FC<Props> = (props: Props) => {
+  const [currentValue, setCurrentValue] = useState(0)
 
-  state: State = {
-    currentValue: 0,
-  }
+  const { startAnimation } = useAnimation({
+    duration: 600,
+    updateFunc: (t) => {
+      setCurrentValue(props.value*t)
+    },
+    easing: Easing.easeOutQuad,
+    autoStart: false,
+  })
 
-  animStart: number|undefined
-  animFrame: number|undefined
+  useEffect(() => {
+    props.setStartAnimation(startAnimation)
+  }, [])
 
-  animationLoop = (time: number) => {
-    if (!this.animStart) {
-      this.animStart = time
-    }
+  const numSpaces = Math.max(0, Math.round(currentValue*meterSize)-1);
+  const meterString = '='.repeat(numSpaces)+ '>' + ` `.repeat(meterSize-(numSpaces+1));
 
-    const elapsedTime = time - this.animStart
-    const t = elapsedTime/animDuration
-    const eased = Math.min(1, Easing.easeOutQuad(t));
-
-    this.setState({
-      currentValue: Math.min(eased*this.props.value),
-    });
-
-    if (t < 1) {
-      this.animFrame = requestAnimationFrame(this.animationLoop)
-    }
-  }
-
-  componentDidMount(): void {
-    this.props.setStartAnimation(this.startAnimation);
-  }
-
-  componentWillUnmount(): void {
-    if (this.animFrame) {
-      cancelAnimationFrame(this.animFrame)
-    }
-  }
-
-  startAnimation = async () => {
-    this.animFrame = requestAnimationFrame(this.animationLoop)
-  }
-
-  render() {
-    const numSpaces = Math.max(0, Math.round(this.state.currentValue*meterSize)-1);
-    const meterString = '='.repeat(numSpaces)+ '>' + ` `.repeat(meterSize-(numSpaces+1));
-
-    return (
-      <PosedP className={"pf-skill-meter"}>
-        <span className={'pf-skill-meter-prefix'}>{this.props.skill}:&nbsp;</span>
-        <Hidden only={['xl', 'lg', 'sm']}>
-          <br/>
-        </Hidden>
-        <span>[{meterString}]</span>
-      </PosedP>
-    )
-  }
+  return (
+    <PosedP className={"pf-skill-meter"}>
+      <span className={'pf-skill-meter-prefix'}>{props.skill}:&nbsp;</span>
+      <Hidden only={['xl', 'lg', 'sm']}>
+        <br/>
+      </Hidden>
+      <span>[{meterString}]</span>
+    </PosedP>
+  )
 }
 
 export default SkillMeter;
