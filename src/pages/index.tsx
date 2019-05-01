@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react"
+import React, { Component } from "react"
 
 import SEO from "../components/seo"
 import { Helmet } from "react-helmet"
@@ -34,7 +34,9 @@ class IndexPage extends Component<{}, State> {
       this.setState({ didLoad: true });
 
       setTimeout(() => {
-        loader.parentNode.removeChild(loader);
+        if (loader.parentNode) {
+          loader.parentNode.removeChild(loader);
+        }
       }, 300)
     }, 1000);
   }

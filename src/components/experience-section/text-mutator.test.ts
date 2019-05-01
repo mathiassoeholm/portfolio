@@ -1,9 +1,9 @@
 import { createTextMutator } from './text-mutator'
 
 it('mutates the text', async () => {
-  const sleepMock = jest.fn()
+  const delayMock = jest.fn()
   const getCurrentNonce = () => 0
-  const textMutator = createTextMutator(sleepMock, getCurrentNonce)
+  const textMutator = createTextMutator(delayMock, getCurrentNonce)
 
   const bobCatTexts: string[] = []
   await textMutator('Bob', 'Cat', 0, (text) => {
@@ -73,16 +73,16 @@ it('stops running if nonce changes', async () => {
   const getCurrentNonce = jest.fn().mockReturnValue(0)
 
   let i = 0
-  const sleepMock = async () => {
+  const delayMock = async () => {
     if (i == 2) {
-      // On the third call to sleep we change the nonce
+      // On the third call to delay we change the nonce
       getCurrentNonce.mockReturnValue(1)
     }
 
     i++
   }
 
-  const textMutator = createTextMutator(sleepMock, getCurrentNonce)
+  const textMutator = createTextMutator(delayMock, getCurrentNonce)
 
   const texts: string[] = []
   await textMutator('Very Looooooong Text', 'asdf', getCurrentNonce(), (text) => {

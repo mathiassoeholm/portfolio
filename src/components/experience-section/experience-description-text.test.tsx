@@ -11,7 +11,7 @@ describe('experience-description-text', () => {
     const { container } = render(
       <ExperienceDescriptionText
         setSetText={(s) => setText = s}
-        sleepOverride={jest.fn()}
+        delayOverride={jest.fn()}
       />
     )
 
