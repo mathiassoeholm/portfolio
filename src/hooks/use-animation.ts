@@ -45,8 +45,6 @@ export function useAnimation(config: AnimationConfig) {
       animationContext.increaseStagger()
     }
 
-    console.log('Waiting: ' + delay)
-
     setTimeout(() => {
       const startTime = Date.now()
 
