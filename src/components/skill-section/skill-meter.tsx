@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { Hidden } from "@material-ui/core"
 import Easing from '../../utility/easing';
 import posed from "react-pose"
@@ -21,7 +21,6 @@ const PosedP = posed.p({
 interface Props {
   skill: string,
   value: number,
-  setStartAnimation: (startAnimation: () => void) => void,
 }
 
 const meterSize = 36;
@@ -29,18 +28,13 @@ const meterSize = 36;
 const SkillMeter: React.FC<Props> = (props: Props) => {
   const [currentValue, setCurrentValue] = useState(0)
 
-  const { startAnimation } = useAnimation({
+  useAnimation({
     duration: 600,
     updateFunc: (t) => {
       setCurrentValue(props.value*t)
     },
     easing: Easing.easeOutQuad,
-    autoStart: false,
   })
-
-  useEffect(() => {
-    props.setStartAnimation(startAnimation)
-  }, [])
 
   const numSpaces = Math.max(0, Math.round(currentValue*meterSize)-1);
   const meterString = '='.repeat(numSpaces)+ '>' + ` `.repeat(meterSize-(numSpaces+1));

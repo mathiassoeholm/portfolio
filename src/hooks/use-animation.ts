@@ -1,44 +1,72 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { AnimationContext } from "../components/animation/animation-context"
 
 interface AnimationConfig {
   updateFunc: UpdateFunc,
   duration: number,
   easing?: Easing,
-  autoStart?: boolean,
+  started?: boolean,
 }
 
 type UpdateFunc = (t: number) => void
 type Easing = (t: number) => number
 
 export function useAnimation(config: AnimationConfig) {
-  let autoStart = config.autoStart == undefined ? true : config.autoStart
+  // Auto start animation if no other options override this
+  let shouldStart = true
 
-  const [startedAnimation, setStartedAnimation] = useState(autoStart)
+  const animationContext = useContext(AnimationContext)
+
+  if (animationContext && animationContext.started != undefined) {
+    shouldStart = animationContext.started
+  }
+
+  if (config.started != undefined) {
+    shouldStart = config.started
+  }
+
+  const [startedAnimation, setStartedAnimation] = useState(shouldStart)
+
+  if (!startedAnimation && shouldStart) {
+    setStartedAnimation(true)
+  }
 
   useEffect(() => {
     if (!startedAnimation) {
       return
     }
 
-    const startTime = Date.now()
     let currentFrame: number|undefined = undefined
+    let delay = 0
 
-    const update = () => {
-      const elapsed = Date.now() - startTime
-      let t = Math.min(1, elapsed/config.duration)
-
-      if (config.easing) {
-        t = config.easing(t)
-      }
-
-      config.updateFunc(t)
-
-      if (elapsed < config.duration) {
-        currentFrame = requestAnimationFrame(update)
-      }
+    if (animationContext) {
+      console.log(animationContext.getStagger())
+      delay = animationContext.getStagger()
+      animationContext.increaseStagger()
     }
 
-    currentFrame = requestAnimationFrame(update)
+    console.log('Waiting: ' + delay)
+
+    setTimeout(() => {
+      const startTime = Date.now()
+
+      const update = () => {
+        const elapsed = Date.now() - startTime
+        let t = Math.min(1, elapsed/config.duration)
+
+        if (config.easing) {
+          t = config.easing(t)
+        }
+
+        config.updateFunc(t)
+
+        if (elapsed < config.duration) {
+          currentFrame = requestAnimationFrame(update)
+        }
+      }
+
+      currentFrame = requestAnimationFrame(update)
+    }, delay)
 
     return () => {
       if (currentFrame != undefined) {

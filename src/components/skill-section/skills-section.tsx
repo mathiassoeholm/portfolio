@@ -1,27 +1,19 @@
-import React from "react"
+import React, { useState } from "react"
 import SectionHeader, { SectionHeaderType } from "../section-header"
 import SkillMeter from "./skill-meter"
-import { delay } from '@mathiassoeholm/js-utils/async'
 import FadeReveal from "../fade-reveal"
+import AnimationGroup from "../animation/animation-group"
 
 interface SkillDescription {
   name: string,
   value: number
 }
 
-let animationStarters: (() => void)[] = [];
-
 const SkillsSection: React.FC = () => {
+  const [startedAnimation, setStartedAnimation] = useState(false)
 
-  const startAnimation = async () => {
-    await delay(200);
-
-    for (let animStarter of animationStarters) {
-      animStarter();
-
-      // Stagger animation
-      await delay(100);
-    }
+  const onBecomeVisible = () => {
+    setStartedAnimation(true)
   }
 
   const renderSkillMeter = ({ name, value }: SkillDescription, index: number) => {
@@ -30,7 +22,6 @@ const SkillsSection: React.FC = () => {
         key={index}
         skill={name}
         value={value}
-        setStartAnimation={childFunc => animationStarters.push(childFunc)}
       />
     )
   }
@@ -39,7 +30,8 @@ const SkillsSection: React.FC = () => {
     <div className={'pf-skills-section'} >
       <SectionHeader type={SectionHeaderType.Skills}/>
       <div className={'pf-skill-container-parent'}>
-        <FadeReveal onBecomeVisible={startAnimation} staggerChildren={100} className={'pf-skill-container'} >
+        <FadeReveal onBecomeVisible={onBecomeVisible} staggerChildren={100} className={'pf-skill-container'} >
+          <AnimationGroup stagger={100} started={startedAnimation}>
           {
             [
               {name: 'Unity', value: 0.95},
@@ -57,6 +49,7 @@ const SkillsSection: React.FC = () => {
               {name: 'Photoshop', value: 0.3},
             ].map(renderSkillMeter)
           }
+          </AnimationGroup>
         </FadeReveal>
       </div>
     </div>
