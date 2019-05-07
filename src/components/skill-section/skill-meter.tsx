@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Hidden } from "@material-ui/core"
 import Easing from '../../utility/easing';
 import posed from "react-pose"
-import { useAnimation } from "../../hooks/use-animation"
+import { useAnim } from 'use-anim'
 
 const PosedP = posed.p({
   hidden: {
@@ -28,7 +28,7 @@ const meterSize = 36;
 const SkillMeter: React.FC<Props> = (props: Props) => {
   const [currentValue, setCurrentValue] = useState(0)
 
-  useAnimation({
+  useAnim({
     duration: 600,
     updateFunc: (t) => {
       setCurrentValue(props.value*t)

@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import SectionHeader, { SectionHeaderType } from "../section-header"
 import SkillMeter from "./skill-meter"
 import FadeReveal from "../fade-reveal"
-import AnimationGroup from "../animation/animation-group"
+import { AnimationGroup } from 'use-anim'
 
 interface SkillDescription {
   name: string,

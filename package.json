@@ -26,7 +26,8 @@
     "react-helmet": "^5.2.0",
     "react-pose": "^4.0.8",
     "react-visibility-sensor": "^5.0.2",
-    "smoothscroll-polyfill": "^0.4.4"
+    "smoothscroll-polyfill": "^0.4.4",
+    "use-anim": "^0.1.4"
   },
   "devDependencies": {
     "@types/jest": "^24.0.11",
