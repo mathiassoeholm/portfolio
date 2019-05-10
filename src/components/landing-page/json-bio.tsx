@@ -40,7 +40,6 @@ const JsonBio: React.FC = () => {
         <br />
         {renderKeyValue('name', 'Mathias Søholm', 0)}
         {renderKeyValue('title', 'Software Engineer', 1)}
-        {renderKeyValue('status', 'Available for hire', 2)}
         &nbsp;&nbsp;"languages"<span className={'pf-clear-text'}>: [</span>
         <br />
         {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ExperienceDescription } from "./experience_descriptions";
+import { ExperienceDescription } from "./experience-descriptions";
 import { delay } from '@mathiassoeholm/js-utils/async';
 import posed from 'react-pose';
 import { createTextMutator } from "./text-mutator"

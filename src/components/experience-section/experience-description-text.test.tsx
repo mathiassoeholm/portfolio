@@ -1,7 +1,7 @@
 import React from 'react'
 import { cleanup, render, wait } from "react-testing-library"
 import ExperienceDescriptionText from "./experience-description-text"
-import { ExperienceDescription } from "./experience_descriptions"
+import { ExperienceDescription } from "./experience-descriptions"
 
 describe('experience-description-text', () => {
 

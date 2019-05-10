@@ -6,10 +6,18 @@ export interface ExperienceDescription {
 }
 
 const experienceDescriptions:{ [index:string] : ExperienceDescription } = {
+  'Trifork': {
+    title: 'Software Engineer',
+    fullName: 'Trifork',
+    period: 'May. 2019 - Present',
+    description: [
+      'Frontend consultancy work for LEGO using React and TypeScript.',
+    ]
+  },
   'Mindfox': {
     title: 'Founder/Software Engineer',
     fullName: 'Mindfox Studios',
-    period: 'Jun. 2018 - Present',
+    period: 'Jun. 2018 - May. 2019',
     description: [
       'Shipped two original mobile games, Space Loops and Sausage Throw.',
       'Worked with React Native to implement Odin ICE-Pro, from design to release in just three weeks.\n',
