@@ -23,14 +23,6 @@ export default function HTML(props) {
           id="___gatsby"
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
-        <div className={'pf-page-loader-container'}>
-          <div className="lds-ellipsis">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        </div>
         {props.postBodyComponents}
       </body>
     </html>

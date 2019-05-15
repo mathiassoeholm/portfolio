@@ -7,68 +7,37 @@ import ProjectGreenSection from "../components/project-green/project-green-secti
 import EtherWalletSection from "../components/ether-wallet/ether-wallet-section"
 import SpaceLoopsSection from "../components/space-loops/space-loops-section"
 import smoothscroll from 'smoothscroll-polyfill';
+import LoadingOverlay from "../components/loading-overlay"
 
 if (typeof window !== 'undefined') {
   smoothscroll.polyfill();
 }
 
-interface State {
-  didLoad: boolean
-}
-
-class IndexPage extends Component<{}, State> {
-
-  state: State = {
-    didLoad: false,
-  }
-
-  componentDidMount(): void {
-    const loader = document.querySelector('.pf-page-loader-container');
-    setTimeout(() => {
-      if (!loader) {
-        return;
-      }
-
-      loader.classList.add('pf-page-loader-container--hide');
-
-      this.setState({ didLoad: true });
-
-      setTimeout(() => {
-        if (loader.parentNode) {
-          loader.parentNode.removeChild(loader);
-        }
-      }, 300)
-    }, 1000);
-  }
-
+class IndexPage extends Component {
   render() {
-    if (this.state.didLoad) {
-      return (
-        <>
-          <Helmet>
-            <link
-              href="https://fonts.googleapis.com/css?family=Source+Code+Pro"
-              rel="stylesheet"
-            />
-            <link
-              href="https://fonts.googleapis.com/css?family=Montserrat"
-              rel="stylesheet"
-            />
-            <link
-              href="https://fonts.googleapis.com/css?family=Roboto:300,400"
-              rel="stylesheet"
-            />
-          </Helmet>
-          <SEO title={"Hire Mathias"}/>
-          <GridLayout/>
-          <ProjectGreenSection/>
-          <EtherWalletSection/>
-          <SpaceLoopsSection />
-        </>
-      );
-    } else {
-      return null;
-    }
+    return (
+      <LoadingOverlay>
+        <Helmet>
+          <link
+            href="https://fonts.googleapis.com/css?family=Source+Code+Pro"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css?family=Montserrat"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400"
+            rel="stylesheet"
+          />
+        </Helmet>
+        <SEO title={"Hire Mathias"}/>
+        <GridLayout/>
+        <ProjectGreenSection/>
+        <EtherWalletSection/>
+        <SpaceLoopsSection />
+      </LoadingOverlay>
+    );
   }
 }
 

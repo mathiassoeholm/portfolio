@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from "react"
 import LoadingText from "./loading-text"
+import { LoadingContext } from "../loading-overlay"
 
-const JsonBio: React.FC = () => {
+export const JsonBio: React.FC = () => {
   const renderKeyValue = (key: string, value: string, index: number) => {
     return (
       <span>
@@ -62,4 +63,11 @@ const JsonBio: React.FC = () => {
   );
 }
 
-export default JsonBio;
+// This small wrapper delays the Json Bio, such that
+// the animations won't start until the loading overlay is gone
+const DelayedJsonBio: React.FC = () => {
+  const { isLoading } = useContext(LoadingContext)
+  return isLoading ? null : <JsonBio />
+}
+
+export default DelayedJsonBio;
