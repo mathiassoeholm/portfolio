@@ -1,7 +1,14 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import posed from "react-pose"
+import Spinner from "./spinner"
+import classNames from 'classnames'
 
-const LOAD_DURATION = 3000
+/*
+ * Using a constant load duration.
+ * Kind of a hacky way to make sure layout delays and
+ * font flickering isn't visible.
+ */
+const LOAD_DURATION = 2000
 
 const PosedDiv = posed.div();
 
@@ -28,21 +35,24 @@ export const LoadingOverlay: React.FC = (props) => {
   }, [])
 
   return (
-    <>
-      {isLoading && <Overlay />}
       <LoadingContext.Provider value={{ isLoading }}>
+        <Overlay />
         <PosedDiv pose={pose}>
           {props.children}
         </PosedDiv>
       </LoadingContext.Provider>
-    </>
   )
 }
 
 const Overlay: React.FC = () => {
+  const { isLoading } = useContext(LoadingContext)
+
   return (
-    <div className="loading-overlay">
-      <div>Loading...</div>
+    <div className={classNames(
+      'loading-overlay',
+      !isLoading && 'loading-overlay--hidden'
+    )}>
+      <Spinner />
     </div>
   )
 }

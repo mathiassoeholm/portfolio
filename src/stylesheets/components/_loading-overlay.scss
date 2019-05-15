@@ -1,5 +1,5 @@
 .loading-overlay {
-  background: red;
+  background: $landing-page-top-color;
   position: absolute;
   left: 0;
   right: 0;
@@ -9,4 +9,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 400ms;
+
+  &--hidden {
+    opacity: 0;
+
+    // Hide spinner since it looks bad if it's still there after
+    // the scrollbar appears, because it will get offset from the right.
+    .spinner {
+      display: none;
+    }
+  }
 }

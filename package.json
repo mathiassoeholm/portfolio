@@ -7,6 +7,7 @@
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "@mathiassoeholm/js-utils": "^1.0.4",
+    "classnames": "^2.2.6",
     "gatsby": "^2.2.13",
     "gatsby-image": "^2.0.37",
     "gatsby-plugin-manifest": "^2.0.24",
@@ -30,6 +31,7 @@
     "use-anim": "^2.0.0"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.7",
     "@types/jest": "^24.0.11",
     "@types/react": "^16.8.9",
     "@types/react-helmet": "^5.0.8",
