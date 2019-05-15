@@ -12501,10 +12501,10 @@ url@^0.11.0:
     punycode "1.3.2"
     querystring "0.2.0"
 
-use-anim@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/use-anim/-/use-anim-0.1.4.tgz#b5c6371d5ccdd3b948a00ab5bd1cfd535fe085aa"
-  integrity sha512-Vhw6CM80U2SjzQnjnt2CzkFZB2mvUBB9iuOndiTH1nSFXW7LXmpQNgYidzxW2rsReYAHoU0jtKBifjHqtzN2Zg==
+use-anim@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/use-anim/-/use-anim-2.0.0.tgz#d653249e15347e360c1228dc0f9de283f3882f39"
+  integrity sha512-Qc0lFC7V2rYHRE25FGN9lncVanxTQbULbJ9dR4NxXZnqtelVaJE0+dWS0DE6M2QMNrfoo4aPO+hdFAC73sdC/A==
 
 use@^3.1.0:
   version "3.1.1"

@@ -30,10 +30,9 @@ const SkillMeter: React.FC<Props> = (props: Props) => {
 
   useAnim({
     duration: 600,
-    updateFunc: (t) => {
-      setCurrentValue(props.value*t)
-    },
     easing: Easing.easeOutQuad,
+  }, t => {
+    setCurrentValue(props.value*t)
   })
 
   const numSpaces = Math.max(0, Math.round(currentValue*meterSize)-1);
