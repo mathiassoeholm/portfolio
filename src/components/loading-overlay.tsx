@@ -16,7 +16,12 @@ export const LoadingOverlay: React.FC = (props) => {
   const [pose, setPose] = useState('hidden')
 
   useEffect(() => {
+    const body = document.querySelector('body')!
+    body.style.overflow = 'hidden'
+
     setTimeout(() => {
+      body.style.overflow = 'visible'
+
       setIsLoading(false)
       setPose('visible')
     }, LOAD_DURATION)
