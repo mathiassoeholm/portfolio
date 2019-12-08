@@ -34,17 +34,17 @@ const SkillsSection: React.FC = () => {
           <AnimationGroup stagger={100} started={startedAnimation}>
           {
             [
-              {name: 'Unity', value: 0.95},
-              {name: 'React', value: 0.8},
-              {name: 'JavaScript (ES6)', value: 0.8},
-              {name: 'Flutter', value: 0.75},
-              {name: 'React Native', value: 0.7},
-              {name: 'C#', value: 0.7},
-              {name: 'TypeScript', value: 0.65},
+              {name: 'React', value: 0.9},
+              {name: 'TypeScript', value: 0.85},
+              {name: 'JavaScript (ES6)', value: 0.85},
+              {name: 'Flutter', value: 0.7},
+              {name: 'Unity', value: 0.7},
+              {name: 'Sass', value: 0.7},
               {name: 'Swift', value: 0.65},
+              {name: 'C#', value: 0.65},
+              {name: 'React Native', value: 0.6},
               {name: 'Kotlin', value: 0.6},
               {name: 'Java', value: 0.6},
-              {name: 'Sass', value: 0.5},
               {name: 'Figma', value: 0.4},
               {name: 'Photoshop', value: 0.3},
             ].map(renderSkillMeter)
